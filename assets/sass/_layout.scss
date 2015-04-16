@@ -1,0 +1,804 @@
+
+/* Table of Content
+==================================================
+
+
+
+/* Header Styles
+================================================== */
+header{
+	background-color: $purple;
+
+	width: 100%;
+	padding: 30px 0 0px 0;
+
+	.navigation{
+		padding-bottom: 10px;
+		ul{
+			list-style-type: none;
+			margin: 0; padding: 0;
+			@include breakpoint(portrait){
+				padding-top: 20px;
+			}
+
+
+			li{
+				text-transform: uppercase;
+				float: left;
+				display: inline-block;
+				width: 145px;
+				padding: 15px 20px 0 0;
+				font-weight: 900;
+
+				font-size: 14px; line-height: 18px;
+				@include breakpoint(smallscreen){
+					width: 110px;
+				}
+
+				@include breakpoint(landscape){
+					width: 110px;
+				}
+				@include breakpoint(portrait){
+					width: 90%;
+					text-align: center;
+				}
+
+				&:nth-child(1){
+					width: 175px;
+					text-align: left;
+					padding-top: 14px;
+					@include breakpoint(smallscreen){
+						width: 120px;
+					}
+					@include breakpoint(landscape){
+						width: 110px;
+					}
+					@include breakpoint(portrait){
+						width: 90%;
+						text-align: center;
+						padding: 32px 20px 0 0;
+					}
+
+				}
+
+				a{
+					color: white;
+					cursor: pointer;
+				}
+				&#menu-item-238,&#menu-item-92{
+					padding-top: 14px;
+					text-align: left;
+					@include breakpoint(smallscreen){
+						padding-top: 28px;
+					}
+					@include breakpoint(landscape){
+						padding-top: 28px;
+					}
+					@include breakpoint(portrait){
+						width: 90%;
+						text-align: center;
+						padding: 32px 20px 0 0;
+					}
+					& a:hover{
+						@include opacity(1);
+						cursor: default;
+					}
+				}
+				&.current_page_item,&.current-menu-item,&.current-menu-parent{
+					a{
+						color: $orange;
+					}
+				}
+			}
+		}
+		img#menu-arrow{
+			margin-left: 230px;
+			@include breakpoint(smallscreen){
+				margin-left: 38px;
+			}
+			@include breakpoint(landscape){
+				margin-left: 38px;
+			}
+			@include breakpoint(portrait){
+				margin-left: 260px;
+				top: -53px;
+				position: relative;
+			}
+		}
+	}
+	.pushdown{
+		display: none;
+		width: 100%;
+		background-color: white;
+		height: 100px;
+		box-shadow:
+        	inset 0px 11px 8px -10px #CCC,
+        	inset 0px -11px 8px -10px #CCC;
+		font-size: 14px;
+		line-height: 18px;
+		@include breakpoint(smallscreen){
+			height: 140px;
+		}
+		@include breakpoint(landscape){
+			height: 300px;
+		}
+		@include breakpoint(portrait){
+			height: 330px;
+		}
+
+
+
+		.pushdown-callout{
+
+			color: $light_purple;
+			font-style: italic;
+			padding: 20px 80px 0 0;
+		}
+		.pushdown-item{
+			padding-top: 20px;
+
+			a{
+
+				font-weight: 900;
+				text-transform: uppercase;
+
+				&:after{
+					content: url('assets/img/right-arrow-orange.png');
+					position: relative;
+					top: 2px;
+					left: 18px;
+				}
+
+			}
+		}
+		.pushdown-location{
+			display: block;
+			color: $orange;
+		}
+
+	}
+
+	.show{display:block}
+}
+
+
+/* Homepage Styles
+================================================== */
+
+.banner{
+	height: 500px;
+	width: 100%;
+	background-color: $orange;
+	@include breakpoint(landscape){
+		height: auto;
+	}
+	@include breakpoint(portrait){
+		height: auto;
+	}
+}
+
+.home-callout{
+	padding: 50px 30px 40px 0;
+
+	@include breakpoint(smallscreen){
+		font-size: 44px;
+		line-height: 52px;
+		padding: 30px 10px 20px 0;
+	}
+	@include breakpoint(landscape){
+		font-size: 30px;
+		line-height: 40px;
+		padding: 30px 10px 20px 0;
+	}
+	@include breakpoint(portrait){
+		font-size: 30px;
+		line-height: 40px;
+		padding: 30px 10px 20px 0;
+	}
+
+
+
+}
+#home-arrow:hover{
+	@include opacity(0.7);
+	cursor: pointer;
+}
+
+.home-img{
+	padding: 0; margin: 0;
+	margin-bottom: 0px;
+
+	@include breakpoint(portrait){
+		width: 100% !important;
+ 	}
+ 	@include breakpoint(landscape){
+		width: 100% !important;
+ 	}
+
+	img{
+ 		max-width: none !important;
+ 		height: 500px;
+
+ 		@include breakpoint(smallscreen){
+			padding: 0px 0px 0px 0;
+			overflow: hidden
+		}
+		@include breakpoint(landscape){
+ 			padding: 30px 0px 0px 0;
+ 			width: 100% !important;
+ 			height: auto;
+ 			width: 768px !important;
+		  	height: auto;
+		  	margin-bottom: 0px;
+		  	left: -170px;
+		  	position: relative;
+		  	top: 5px;
+		}
+		@include breakpoint(portrait){
+		  padding: 30px 0px 0px 0;
+		  width: 480px !important;
+		  height: auto;
+		  margin-bottom: 0px;
+		  left: -85px;
+		  position: relative;
+		  top: 5px;
+		}
+	}
+
+
+}
+
+.content-callouts{
+	width: 100%;
+	background-color: white;
+	margin: 0px 0 20px 0;
+
+	.content-item{
+		h1{
+			color: $purple; padding-bottom: 30px;
+			@include breakpoint(portrait){
+				font-size: 40px;
+				line-height: 52px;
+			}
+		}
+		margin:70px 0 100px 0;
+		font-weight: bold;
+	}
+
+	a.content-read-more{
+		font-weight: 400;
+		font-size: 13px;
+		strong{
+			font-weight: 900;
+			text-transform: uppercase;
+
+		}
+		&:after{
+				content: url('assets/img/right-arrow-orange.png');
+				position: relative;
+				top: 2px;
+				left: 15px;
+			}
+	}
+
+	.home-gears{
+		@include breakpoint(smallscreen){
+			width: 380px !important;
+  			margin-left: 90px;
+		}
+	}
+
+	.weights{
+		@include breakpoint(portrait){
+			margin-top: 30px;
+		}
+	}
+
+
+}
+
+.resources-panel{
+	width: 100%;
+	background-color: $purple;
+	padding: 0;
+	position: relative;
+
+	.resource-header{
+		color: white;
+		text-align: center;
+		padding: 20px 0 0px 0;
+
+		@include breakpoint(landscape){
+			padding: 20px 0 20px 0;
+		}
+		@include breakpoint(portrait){
+			padding: 20px 0 20px 0;
+		}
+		a:hover{
+			@include opacity(1);
+		}
+		&:hover{
+			@include opacity(.8);
+			cursor: pointer;
+		}
+	}
+	.resource-footer{
+		color: white;
+		text-align: center;
+		padding: 30px 0 30px 0;
+		font-size: 13px;
+		a{
+			color: white;
+			&:hover{
+				color: $orange;
+
+			}
+		}
+	}
+
+
+	.resource-v{
+
+		width: 50px;
+		height: 17px;
+		margin: 0 auto;
+		position: relative;
+		top: 0px;
+
+		a#resource-x{
+			position: relative;
+			top: 7px;
+			left: 5px;
+			z-index: 100;
+
+		}
+		.resourcearrow{
+			background: url('assets/img/down-arrow-orange.png') no-repeat;
+			width: 32px;
+			height: 15px;
+		}
+		.arrowx{
+			background: url('assets/img/orange-x.png') no-repeat;
+			width: 32px;
+			height: 15px;
+		}
+	}
+	.top-fix{
+		top: 0px;
+	}
+
+}
+
+#resource-hidden{
+	display: none;
+}
+
+
+.resource-item{
+	margin-top: 30px;
+	margin-bottom: 10px;
+	height: 240px;
+	@include breakpoint(smallscreen){
+		height: 275px;
+	}
+	&:hover{
+			@include opacity(0.7);
+		}
+	img{
+		margin-bottom: 10px;
+
+	}
+	a{
+		font-size: 12px;
+		line-height: 16px;
+		text-transform: uppercase;
+		font-weight: 900;
+
+		img.rt-arrow{
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			top: 3px;
+			left: 10px;
+		}
+
+		/*
+		&:after{
+			content: url('assets/img/right-arrow-orange.png');
+			position: relative;
+			top: 4px;
+			left: 15px;
+		}
+		*/
+
+
+	}
+}
+
+.resource-item-left{
+	display:inline-block;
+	float: left;
+	margin: 0; padding:0;
+	width: 80%;
+	 word-wrap: break-word;
+
+}
+.resource-item-right{
+	display:inline-block;
+	float: left;
+	margin: 0; padding:0;
+	width: 20%;
+
+}
+
+.purple_text{
+	color: $purple;
+}
+
+.partnerships-panel{
+	width: 100%;
+	background-color: $orange;
+	padding: 50px 0 50px 0;
+
+	.partnerships-header{
+		h2{color:white;}
+		text-align: center;
+		padding: 0px 0 40px 0;
+	}
+	.partnership-image{
+		height: 140px;
+		margin-bottom: 20px;
+		text-align: center;
+		@include breakpoint(landscape){
+			padding-top: 40px;
+		}
+		@include breakpoint(portrait){
+			padding-top: 40px;
+		}
+	}
+	.partnership-title{
+		h3{
+			font-size:16px;
+			line-height: 20px;
+			font-weight: 900;
+			margin-bottom: 14px;
+		}
+	}
+
+	.partnership-link a{
+		font-size: 12px;
+		color: white;
+		text-transform: uppercase;
+		font-weight: 900;
+		&:after{
+			content: url('assets/img/right-arrow.png');
+			position: relative;
+			top: 3px;
+			left: 10px;
+		}
+	}
+
+
+}
+
+/* PAGE Styles
+================================================== */
+
+.page-header{
+	background: url('assets/img/header-bg.png');
+	height: 70px;
+	width: 100%;
+	.page-title{
+		padding-top:20px;
+		h1{
+			font-size: 18px;
+			line-height: 30px;
+			font-weight: 900;
+			text-transform: uppercase;
+			color: $orange;
+			@include breakpoint(portrait){
+				line-height: 23px;
+			}
+
+		}
+		@include breakpoint(portrait){
+			padding-top: 10px;
+		}
+	}
+}
+
+.sidebar{
+	margin-bottom: 20px;
+	h2{
+		@include breakpoint(smallscreen){
+			font-size: 40px;
+			line-height: 50px;
+		}
+		@include breakpoint(landscape){
+			font-size: 30px;
+			line-height: 40px;
+		}
+		@include breakpoint(portrait){
+			font-size: 30px;
+			line-height: 40px;
+		}
+	}
+}
+
+
+
+.page-banner{
+	width:100%;
+	background-color: $orange;
+	padding: 30px 0 30px 0;
+
+	.page-banner-callout{
+		@include breakpoint(landscape){
+ 			margin-bottom:20px;
+		}
+		@include breakpoint(portrait){
+ 			margin-bottom:20px;
+		}
+	}
+
+	.page-banner-text{
+		color: white;
+
+	}
+}
+
+.main-content{
+	margin-top: 35px;
+
+	.page-content{
+		margin:0 0 50px 0;
+	}
+
+}
+
+.orange-bar{
+	width: 100%;
+	height: 30px;
+	background-color: $orange;
+}
+
+/* PANEL Styles
+================================================== */
+.panel{
+	width: 100%;
+
+	&.page-content{
+		margin:30px 0 40px 0;
+	}
+
+}
+
+.subheader{
+	margin-bottom:20px;
+}
+
+.image-panel{
+	height: 400px;
+	@include background-size(cover);
+	@include breakpoint(portrait){
+		height: 200px;
+	}
+}
+
+
+
+
+
+
+/* #Resource Styles
+================================================== */
+.filters{
+	width:100%;
+	background-color: $orange;
+	padding: 30px 0 30px 0;
+}
+.filter-header{
+	h3{
+		font-size: 14px; margin-bottom:15px; text-transform: none;
+	}
+}
+
+.filter-row{
+
+	a{
+		color: white;
+		font-size: 14px; line-height: 18px;
+		text-transform: uppercase;
+		font-weight: 900;
+		width: 140px;
+		display: inline;
+		height: 110px;
+		float: left;
+		padding: 10px 10px 10px 10px;
+		&:nth-child(1){
+			padding-left:0;
+		}
+		&.active{
+			color:$purple;
+		}
+		.img-cont{
+			height: 60px;
+			display: inline-block;
+		}
+
+		@include breakpoint(smallscreen){
+			 width: 110px;
+		}
+		@include breakpoint(landscape){
+	 		 width: 110px;
+		}
+		@include breakpoint(portrait){
+	 		 width: 100px;
+	 		 padding: 5px;
+		}
+
+	}
+	padding-bottom:30px;
+	text-align: center;
+}
+
+.resource-listing{
+	margin-bottom: 50px;
+}
+
+.resource-item{
+	margin-top: 30px;
+	.resource-img{
+		height: 100px;
+		text-align: center;
+		img{
+ 			max-height: 90px;
+		}
+		.external{
+			width: 24px;
+			height: 24px;
+			position: relative;
+			top: 2px;
+			left:100px;
+		}
+
+		@include breakpoint(landscape){
+	 		text-align: left;
+		}
+		@include breakpoint(portrait){
+	 		text-align: left;
+		}
+
+	}
+
+
+}
+
+.resource-listing-header{
+	margin-top:15px; font-size: 14px;
+	h3{
+		font-size: 14px;  text-transform: none;
+	}
+	span#filter{
+		text-transform: uppercase;
+	}
+	.right{
+		text-align: right;
+		font-weight:bold;
+		&:after{
+			content: url('assets/img/right-arrow-orange.png');
+			position: relative;
+			top: 3px;
+			left: 5px;
+		}
+
+	}
+}
+
+
+
+/* FOOTER Styles
+================================================== */
+footer{
+	font-size: 12px;
+	line-height: 17px;
+}
+
+.footer-top{
+	width: 100%;
+	height: 140px;
+	background-color: $purple;
+
+	.footer-links{
+		padding-top: 30px;
+		ul{
+			margin: 0;
+			padding: 0;
+			li{
+				list-style-type: none;
+				a{
+					font-weight: 900;
+					text-transform: uppercase;
+					color: white;
+					margin-bottom: 4px;
+					display: block;
+					&:after{
+						content: url('assets/img/right-arrow.png');
+						position: relative;
+						top: 3px;
+						left: 15px;
+					}
+					@include breakpoint(smallscreen){
+						margin-bottom: 0px;
+					}
+				}
+			}
+		}
+
+	}
+
+	@include breakpoint(landscape){
+		height:310px;
+	}
+	@include breakpoint(portrait){
+		height:400px;
+	}
+
+	.footer-logos{
+		padding-top:30px;
+
+		span.logo-title{
+			width:100%; display: block;
+			color: $orange;
+			margin-bottom: 20px;
+		}
+
+		img{
+			display: inline-block;
+			padding: 0 40px 0px 0;
+			@include breakpoint(smallscreen){
+				padding: 0 10px 0px 0;
+			}
+			@include breakpoint(landscape){
+				padding: 0 10px 20px 0;
+			}
+			@include breakpoint(portrait){
+				padding: 0 10px 20px 0;
+			}
+		}
+
+	}
+}
+
+.footer-bottom{
+	width: 100%;
+	height: 70px;
+	background-color: white;
+	.footer-text{
+		padding: 20px 0  10px 0;
+	}
+	.mesh{
+ 		text-align: right;
+
+		a{
+			font-weight: bold;
+		}
+	}
+
+
+}
+
+#eb {
+	width: 56px;
+	float: left;
+	margin-top: 10px;
+	display: inline;
+}
+
+#k {
+	width: 75px;
+	margin-top: 25px;
+	display: inline;
+	float: left;
+}

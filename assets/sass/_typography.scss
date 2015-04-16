@@ -1,0 +1,72 @@
+/* Imported Fonts
+================================================== */
+
+/* Import fonts. Example:
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700');
+@import url('assets/libs/font-awesome-4.1.0/css/font-awesome.min.css');
+
+*/
+@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic');
+
+/* #Typography
+================================================== */
+
+	//base
+
+	html, body{font-family: 'Lato', sans-serif; font-size: 16px; color: $purple;}
+
+	//headings
+	h1 {font-weight: 300; font-size: 52px; line-height:56px; color: white;}
+	h2 {font-weight: 300; font-size: 52px; line-height:56px;}
+	h3 {font-weight: 900; font-size: 16px; line-height:24px; text-transform: uppercase;}
+	h4 {}
+	h5 {}
+	h6 {}
+
+	//paragraphs
+	p { margin: 0 0 18px 0;  line-height: 24px; }
+	p img { margin: 0; }
+
+	//styles
+	em { font-style: italic; }
+	strong { font-weight: bold;  }
+
+
+	//blockquote
+	blockquote, blockquote p {}
+	blockquote {}
+	blockquote cite {}
+	blockquote cite:before {}
+	blockquote cite a, blockquote cite a:visited {}
+
+	//horizontal rule
+	hr {}
+
+	.bolded{font-weight: 900; text-transform: uppercase;}
+
+/* #Links
+================================================== */
+	a {color: $orange; text-decoration: none;}
+	a:hover{@include opacity(0.7);}
+	 
+
+
+/* #Lists
+================================================== */
+	ul, ol { margin-bottom: 0px; }
+	ul { list-style: circle outside; }
+	ol { list-style: decimal; }
+	ol, ul, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul ul, ul ol,
+	ol ol, ol ul { margin: 0px 0 0px 20px; font-size: 100%;  }
+	ul ul li, ul ol li,
+	ol ol li, ol ul li { margin-bottom: 0px; }
+	li { line-height: 26px; margin-bottom: 0px; }
+
+	.page-content ul, .page-content ol{
+		margin-bottom: 18px;
+	}
