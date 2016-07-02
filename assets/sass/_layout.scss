@@ -33,10 +33,12 @@ header{
 				font-size: 14px; line-height: 18px;
 				@include breakpoint(smallscreen){
 					width: 110px;
+					padding-right: 14px;
 				}
 
 				@include breakpoint(landscape){
 					width: 110px;
+					padding-right: 5px;
 				}
 				@include breakpoint(portrait){
 					width: 90%;
@@ -57,6 +59,26 @@ header{
 						width: 90%;
 						text-align: center;
 						padding: 32px 20px 0 0;
+					}
+
+				}
+				&:last-child{
+					width: 75px;
+					text-align: left;
+					padding-top: 14px;
+					padding-right: 0px;
+					height: 40px;
+					@include breakpoint(smallscreen){
+						width: 75px;padding-right: 0px;
+					}
+					@include breakpoint(landscape){
+						width: 75px;padding-right: 0px;
+					}
+					@include breakpoint(portrait){
+						width: 90%;
+						text-align: center;
+						padding: 14px 0px 0 0;
+						height: 100%;
 					}
 
 				}
@@ -101,8 +123,9 @@ header{
 			}
 			@include breakpoint(portrait){
 				margin-left: 260px;
-				top: -53px;
+				top: -85px;
 				position: relative;
+
 			}
 		}
 	}
@@ -432,6 +455,10 @@ header{
 
 }
 
+.member-resource-item{
+	height:140px;
+}
+
 .purple_text{
 	color: $purple;
 }
@@ -641,6 +668,12 @@ header{
 	}
 	padding-bottom:30px;
 	text-align: center;
+}
+
+.mr-filters{
+	[class*="-filter"]{
+		display:inline-block;
+	}
 }
 
 .resource-listing{
