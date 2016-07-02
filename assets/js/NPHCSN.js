@@ -111,17 +111,97 @@ jQuery(document).ready(function($){
 
 	});
 
+	//AJAX for member resource filtering
+
+	function loadMemberResources (memberResource, contentType, query) { //*
+ 
+      //console.log(projectType);
+      //console.log(query);  //*
+      var is_loading = false;
+       if (is_loading == false){
+            is_loading = true;
+ 
+            $('#loader, .loader-container').fadeIn(200);
+
+            var data = {
+                action: 'get_member_resources',
+                memberResource: memberResource, //*
+                query: query //*
+            };
+            jQuery.post(ajaxurl, data, function(response) {
+                // now we have the response, so hide the loader
+
+                console.log(response);
+                
+               //$('a#load-more-photos').show();
+                // append: add the new statments to the existing data
+                if(response != 0){
+
+                  
+                  $('#project-gallery').append(response);
+                  //$container.waitForImages(function() {
+                  //   $('#loader').hide();
+                  // });                  
+ 					$('#loader').fadeOut(1000);
+ 					$('.loader-container').fadeOut(300);
+ 					$('.project-tile').addClass('hide');
+ 					//$('.projects-nav ul > li').removeClass('selected');
+ 					//Adds slideinLeft and animated classes to each project tile in order
+ 					$('.project-tile').each(function(i, el){
+ 						window.setTimeout(function(){
+ 						$(el).removeClass('hide').addClass('fadeIn animated');
+ 						}, 50 * i);
+ 					});
+ 					$('.search_form')
+ 						.removeClass('slideInLeft')
+ 						.addClass('slideOutLeft');
+ 					// $('.projects-nav.gallery')
+ 					// 	.removeClass('slideInLeft')
+ 					// 	.addClass('slideOutLeft');
+                  is_loading = false;
+                }
+                else{
+                  $('#loader').hide();
+                  
+                  is_loading = false;
+                }
+
+                
+            });
+        }    
+  }
 
 
-
-
-
-
-
-
-
-
-
-
-
+$('.topic-filter ul li').click(function(){
+	var memberResource = $(this).attr('data-filter');
+	loadMemberResources(memberResource,''); //theNameOfTheAjaxFunction(theNameOfTheDataItem, '')
+	$(this).addClass('selected');
+	$('.topic-filter ul li.selected').not($(this)).removeClass('selected');
+	//Delete whatever is already in the project gallery
+	$('.project-tile').detach();
+	$('.search_form')
+		.removeClass('slideInLeft')
+		.addClass('slideOutLeft')
+		.animate({opacity:0}, 300)
+		.css({zIndex:-1});
+	$('.gallery-gateway')
+		.removeClass('slideOutLeft')
+		.addClass('slideInLeft');
 });
+
+$('.search_form form').submit(function(e){
+	e.preventDefault();
+	var $form = $(this);
+	var $input = $form.find('input[name="s"]');
+	var query = $input.val();
+	console.log(query);
+	loadProjects('',query);
+	$('.project-tile').detach();
+	$('.gallery-gateway')
+		.removeClass('slideOutLeft')
+		.addClass('slideInLeft');
+	$('.post.error').detach();
+	
+});
+
+}); //end ready
