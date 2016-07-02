@@ -132,22 +132,24 @@ jQuery(document).ready(function($){
                 // now we have the response, so hide the loader
 
                 console.log(response);
+                console.log(memberResource);
                 
                //$('a#load-more-photos').show();
                 // append: add the new statments to the existing data
                 if(response != 0){
 
                   
-                  $('#project-gallery').append(response);
+                  $('.resource-listing').append(response);
                   //$container.waitForImages(function() {
                   //   $('#loader').hide();
                   // });                  
  					$('#loader').fadeOut(1000);
  					$('.loader-container').fadeOut(300);
- 					$('.project-tile').addClass('hide');
+ 					$('.member-resource-item').addClass('hide');
  					//$('.projects-nav ul > li').removeClass('selected');
  					//Adds slideinLeft and animated classes to each project tile in order
- 					$('.project-tile').each(function(i, el){
+ 					$('.member-resource-item').each(function(i, el){
+ 						//Show each item in it's turn
  						window.setTimeout(function(){
  						$(el).removeClass('hide').addClass('fadeIn animated');
  						}, 50 * i);
@@ -178,7 +180,7 @@ $('.topic-filter ul li').click(function(){
 	$(this).addClass('selected');
 	$('.topic-filter ul li.selected').not($(this)).removeClass('selected');
 	//Delete whatever is already in the project gallery
-	$('.project-tile').detach();
+	$('.member-resource-item').detach();
 	$('.search_form')
 		.removeClass('slideInLeft')
 		.addClass('slideOutLeft')
