@@ -124,22 +124,26 @@ jQuery(document).ready(function($){
             $('#loader, .loader-container').fadeIn(200);
 
             var data = {
-                action: 'get_member_resources',
-                memberResource: memberResource, //*
-                query: query //*
+                action: 'get_member_resources',  //Our function from function.php
+                memberResource: memberResource, //the return value
+                contentType: contentType,
+                query: query //Are we using the search?  
             };
             jQuery.post(ajaxurl, data, function(response) {
                 // now we have the response, so hide the loader
 
                 console.log(response);
-                console.log(memberResource);
+                console.log(data);
+                //console.log(memberResource);
+                console.log(contentType);
+                //console.log(get_member_resources);
                 
                //$('a#load-more-photos').show();
                 // append: add the new statments to the existing data
                 if(response != 0){
 
                   
-                  $('.resource-listing').append(response);
+                  $('.mr-resource-listing').append(response);
                   //$container.waitForImages(function() {
                   //   $('#loader').hide();
                   // });                  
@@ -173,23 +177,72 @@ jQuery(document).ready(function($){
         }    
   }
 
+// $('[class*="-filter"] ul li').click(function(){
+// 	var memberResource;
+// 	var contentType;
+// 	$('.member-resource ul li').click(function(){
+// 		var memberResource = $(this).attr('data-filter');
+// 		//return memberResource;
+// 	});
+// 	return memberResource;
+// 	$('.content-type ul li').click(function(){
+// 		var contentType = $(this).attr('data-filter');
+// 		//return contentType;
+// 	});
+// 	return contentType;
+// 	//var memberResource = $('.member-resource ul li').attr('data-filter');
+// 	//var contentType = $('.content-type ul li').attr('data-filter');
+// 	loadMemberResources(memberResource,contentType,''); //theNameOfTheAjaxFunction(theNameOfTheDataItem, '')
+// 	console.log('Member resource = ' + memberResource);
+// 	console.log('Content type = ' + contentType);
+// 	$(this).addClass('selected');
+// 	$('.topic-filter ul li.selected').not($(this)).removeClass('selected');
+// 	//Delete whatever is already in the project gallery
+// 	$('.member-resource-item').detach();
+// 	$('.post-error').detach();
 
-$('.topic-filter ul li').click(function(){
-	var memberResource = $(this).attr('data-filter');
-	loadMemberResources(memberResource,''); //theNameOfTheAjaxFunction(theNameOfTheDataItem, '')
+// });
+
+
+$('[class*="-filter"] ul li').click(function(){
+	//var memberResource = $('.member-resource ul li').attr('data-filter');
+	//var contentType = $('.content-type ul li').attr('data-filter');
+	//theNameOfTheAjaxFunction(theNameOfTheDataItem, '')
+	
+	$(this).parent().find('li.selected').removeClass('selected');
+	//$('[class*="-filter"] ul li.selected').not($(this)).removeClass('selected');
 	$(this).addClass('selected');
-	$('.topic-filter ul li.selected').not($(this)).removeClass('selected');
-	//Delete whatever is already in the project gallery
+	//$('.topic-filter ul li.selected').not($(this)).removeClass('selected');
+	//$('.content-filter ul li.selected').not($(this)).removeClass('selected');
+	var memberResource = $('.topic-filter ul li.selected').attr('data-filter');
+	var contentType = $('.content-filter ul li.selected').attr('data-filter');
+	
+	//Delete whatever is already in the result
+
 	$('.member-resource-item').detach();
-	$('.search_form')
-		.removeClass('slideInLeft')
-		.addClass('slideOutLeft')
-		.animate({opacity:0}, 300)
-		.css({zIndex:-1});
-	$('.gallery-gateway')
-		.removeClass('slideOutLeft')
-		.addClass('slideInLeft');
+	$('.post-error').detach();
+
+	loadMemberResources(memberResource,contentType,'');
+	console.log('Member resource = ' + memberResource);
+	console.log('Content type = ' + contentType);
+	
+
 });
+
+// $('.content-filter ul li').click(function(){
+// 	var contentType = $(this).attr('data-filter');
+// 	//console.log("Content Type is:" + contentType);
+	
+// 	loadMemberResources('',contentType,''); //theNameOfTheAjaxFunction(theNameOfTheDataItem, '')
+// 	$(this).addClass('selected');
+// 	$('.content-filter ul li.selected').not($(this)).removeClass('selected');
+
+// 	//Delete whatever is already in the project gallery
+// 	$('.member-resource-item').detach();
+// 	$('.post-error').detach();
+
+	
+// });
 
 $('.search_form form').submit(function(e){
 	e.preventDefault();

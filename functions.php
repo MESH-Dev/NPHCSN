@@ -2,6 +2,7 @@
 //enqueue scripts and styles *use production assets. Dev assets are located in assets/css and assets/js
 function loadup_scripts() {
     wp_enqueue_script( 'theme-js', get_template_directory_uri().'/assets/js/NPHCSN.js?ver=4.1.2', array('jquery'), false, true );
+     wp_enqueue_style( 'animate', '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', false, true );
 }
 add_action( 'wp_enqueue_scripts', 'loadup_scripts' );
 
@@ -273,7 +274,7 @@ function content_type() {
 }
 add_action( 'init', 'content_type', 0 );
 
-// Register Custom Taxonomy - Content Type
+// Register Custom Taxonomy - Member Topic
 function member_topic() {
 
     $labels = array(
@@ -324,25 +325,47 @@ function pluginname_ajaxurl() {
 
 
 add_action('wp_ajax_get_member_resources', 'get_member_resources');  
-add_action('wp_ajax_nopriv_member_resources', 'get_member_resources');  //_nopriv_ allows access for both signed in users, and not
+add_action('wp_ajax_nopriv_get_member_resources', 'get_member_resources');  //_nopriv_ allows access for both signed in users, and not
 
 
-function wp_ajax_get_member_resources(){
+function get_member_resources(){
   $post_slug = $_POST['memberResource'];
+  $post_slug_ct = $_POST['contentType'];
   $query = $_POST['query']; //*
+  //var_dump($post_slug);
   //$query = $_POST('query');
  
  //Make the search exlusive to entries or clicking the filter
- if ($post_slug == '*'): //All posts?
+ if ($post_slug == '*' && $post_slug_ct == "*"): //All posts?
       $args = array(
-      'post_type' => 'member_resource',
+      'post_type' => 'member_resources',
       'posts_per_page' => -1,
       'post_status' => 'publish'
       
       );
- elseif ($post_slug != ''): //Using the filter
+elseif ($post_slug != '*' && $post_slug_ct != '*'): //Using the filter
       $args = array(
-      'post_type' => 'member_resource',
+      'post_type' => 'member_resources',
+      'posts_per_page' => -1,
+      'post_status' => 'publish',
+      //'s' => $query, //This is an 'and', so the query is effectively stopping here, if not commented out
+      'tax_query' => array(
+        'relation'=>'AND',
+        array(
+          'taxonomy' => 'member_topic',
+          'field'    => 'slug',
+          'terms'    => $post_slug, 
+          ),
+        array(
+          'taxonomy' => 'content_type',
+          'field'    => 'slug',
+          'terms'    => $post_slug_ct, 
+          ),
+        ),
+      );
+ elseif ($post_slug != '*' && $post_slug_ct == '*'): //Using the filter
+      $args = array(
+      'post_type' => 'member_resources',
       'posts_per_page' => -1,
       'post_status' => 'publish',
       //'s' => $query, //This is an 'and', so the query is effectively stopping here, if not commented out
@@ -350,14 +373,27 @@ function wp_ajax_get_member_resources(){
         array(
           'taxonomy' => 'member_topic',
           'field'    => 'slug',
-          'terms'    => $post_slug
-          
+          'terms'    => $post_slug, 
+          ),
+        ),
+      );
+elseif ($post_slug_ct != '*' && $post_slug == '*'): //Using the filter
+      $args = array(
+      'post_type' => 'member_resources',
+      'posts_per_page' => -1,
+      'post_status' => 'publish',
+      //'s' => $query, //This is an 'and', so the query is effectively stopping here, if not commented out
+      'tax_query' => array(
+         array(
+          'taxonomy' => 'content_type',
+          'field'    => 'slug',
+          'terms'    => $post_slug_ct, 
           ),
         ),
       );
 else:  //If the search is used
       $args = array(
-      'post_type' => 'member_resource',
+      'post_type' => 'member_resources',
       'posts_per_page' => -1,
       'post_status' => 'publish',
       's' => $query
@@ -370,39 +406,9 @@ endif;
         // the query
       
         $the_query = new WP_Query( $args ); 
+        //var_dump($args);
         $count = $the_query->found_posts;
-        $profile_class = 'four-col';
-
-        $member_topics= wp_get_post_terms($post->ID, 'member_topic');
-        $content_types= wp_get_post_terms($post->ID, 'content_type');
-        $the_title = the_title();
-        $ct_filter = '';
-        $mt_filter = '';
-        $target = '';
-        $external = get_field('link_type'); 
-
-        if ($external == 'true'){
-            $target="_blank";
-        }else{
-            $target="_self";
-        }
-
-        foreach ($member_topics as $member_topic){
-            $mt = $member_topic->slug;
-            $mt_filter .= $member_topic->slug . ' ';
-        }
-        foreach ($content_types as $content_type){
-            $ct = $content_type->slug;
-            $ct_filter .= $content_type->slug . ' ';
-        }
-        //echo $count;
-        //echo '<h1>' . $count . '</h1>';
-
-        // if ($count <= 4):
-        //   $profile_class = 'two-col';
-        // elseif ($count <= 9 && $count > 4):
-        //   $profile_class = 'three-col';
-        // endif;
+        
 
        if ( $the_query->have_posts() ) : 
       // Do we have any posts in the databse that match our query?
@@ -416,19 +422,63 @@ endif;
          //if (have_rows ('project_gallery')): //Setup the panels between the top/bottom panels
                //Setup variables
                
-              
+                $the_title = get_the_title();
+                $mr_link = get_field('mrf_link'); 
+                
+                $target = '';
+                $external = get_field('link_type', $post->ID); 
+
+                $date = get_the_date('m.d.y');
+
+                if ($external == 'true'){
+                        $target="_blank";
+                }else{
+                        $target="_self";
+                    } 
+
+                $member_topics= get_the_terms($post->ID, 'member_topic');
+                //var_dump($member_topics);
+                $content_types= get_the_terms($post->ID, 'content_type');
+
+                $short_title = the_title('', '', false);
+                $shortened_title = substr($short_title, 0, 73);
+                
+                if (strlen($short_title) >= 73){
+                    $overflow = "overflow";
+
+                }
+
+                foreach ($member_topics as $member_topic){
+                    $mt = $member_topic->slug;
+                    //var_dump($mt);
+                    //$mt_filter .= $member_topic->slug . ' ';
+                }
+                foreach ($content_types as $content_type){
+                    $ct = $content_type->slug;
+                    //$ct_filter .= $content_type->slug . ' ';
+                }
+
           //endif; 
-          echo '<div class="three columns member-resource-item '. $mt . ' ' . $ct . '">
-                <a href="' . $mr_link .'" target='. $target .'>
-                <div class="resource-item orange_text"> ' . $the_title . '</div>
-                </a>
-                <div class="m-topic">' . $mt . '</div>
-                <div class="c-type">' . $ct . '</div>
-                ';
+          echo '<div class="member-resource-item '. $mt . ' ' . $ct . '">
+                    <div class="row">
+                        <div class="one columns the-date">' . $date .'</div>
+                            <div class="seven columns the-title ' . $overflow .'">
+                                <a href="' . $mr_link .'" target='. $target .'>
+                                    <div class="orange_text"> ' . $shortened_title . '</div>
+                                </a>
+                            </div>
+                        <div class="two columns">
+                            <div class="m-topic">' . $mt . '</div>
+                        </div>
+                        <div class="two columns">
+                            <div class="c-type">' . $ct . '</div>
+                        </div>
+                    </div>
+                </div>';
          endwhile; 
        else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) 
         
-        echo '<article class="post error">
+        echo '<article class="post-error">
                 <h1 class="404">
                   Your search did not produce any results!
                 </h1>

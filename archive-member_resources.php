@@ -58,12 +58,16 @@
 
 <div class="container mr-filters">
 	<div class="search-filter">
-		Search
+		<form action="<?php home_url() ?>" method="get">
+			<label for="search">Search Resources</label>
+			<input type="search" name="s" id="search" placeholder="" value="" />
+		</form>
 	</div>
 	<div class="topic-filter">
-		Filter by Topic
+		<p>Filter by Topic</p>
 		<ul>
-			<li data-filter="all">All</li>
+			<li class="selected initial" data-filter="*">All
+				<ul class="filter-sub">
 		<?php
 			$member_topics_filters = get_terms('member_topic');
 
@@ -74,12 +78,16 @@
 			<?php echo $member_topics_filter->slug; ?>
 		</li>
 		<?php } ?>
+			</ul>
+			</li>	
 		</ul>
 	</div>
 	<div class="content-filter">
-		Filter by Content-Type
+		<p>Filter by Content Type</p>
 		<ul>
-			<li data-filter="all">All</li>
+			<li class="selected initial" data-filter="*">All
+				<ul class="filter-sub">
+		
 		<?php
 			$content_type_filters = get_terms('content_type');
 
@@ -91,10 +99,21 @@
 		</li>
 		<?php } ?>
 		</ul>
+		</li>
+
+		</ul>
 	</div>
+	<div class="reset" data-filter="*">Reset</div>
 </div>
 
-<div class="container resource-listing">
+<div class="container mr-resource-listing">
+	<div class="row">
+	<div class="header">
+		<div class="one columns">Date</div>
+		<div class="seven columns">Title</div>
+		<div class="two columns">Topic</div>
+		<div class="two columns">Format</div>
+	</div>
 	<!--<div class="row">-->
 	<?php 
 	global $query_string;
@@ -114,6 +133,8 @@
 		$mt_filter = '';
 		$external = get_field('link_type'); 
 
+		$date = get_the_date('m.d.y');
+
 		foreach ($member_topics as $member_topic){
 			$mt = $member_topic->slug;
 			$mt_filter .= $member_topic->slug . ' ';
@@ -124,28 +145,36 @@
 		}
 	 
 	?>
-			<div class="three columns member-resource-item <?php echo $ct . ' ' . $mt ?>">
-	 		<a href="<?php echo $mr_link;?>" <?php if($external=="true"){ ?> target='_blank'<?php }?>>
-	 		<div class=" orange_text">	
-				<!-- <div class="resource-img">
-					<?php if($external){ ?>
-					<div class="external">
-						<img src="<?php bloginfo('template_directory');?>/assets/img/arrow.png" alt="">	
-					</div>
-					<?php } ?>
-					<img src="<?php echo $resource_imageURL;?>" alt="<?php echo $resource_imageAlt; ?>">
-					
-				</div> -->
-				<?php the_title();?> 
-			</div>
-			<!-- <div class="resource-item-right">
-				<img src="<?php bloginfo('template_directory');?>/assets/img/right-arrow-orange.png">
-			</div>	 -->
+			<div class="member-resource-item <?php echo $ct . ' ' . $mt ?>">
+				<div class="row">
+					<div class="one columns the-date"><?php echo $date; ?></div>
+					<?php 
+						$short_title = the_title('', '', false);
+						$shortened_title = substr($short_title, 0, 73);
+					?>
+					<div class="seven columns the-title <?php if(strlen($short_title) >= 73){echo "overflow";} ?>">
+			 			<a href="<?php echo $mr_link;?>" <?php if($external=="true"){ ?> target='_blank'<?php }?>>
+					 		<div class=" orange_text">	
+								<?php
 
-			</a>
-			<div class="m-topic"><?php echo $mt; ?></div>
-			<div class="c-type"><?php echo $ct; ?></div>
-		</div>
+								echo $shortened_title; //echo " ".strlen($shortened_title); //echo " ".strlen($short_title); echo " ".strlen($shortened_title);
+
+								// if( strlen($shortened_title) >= 73){
+								// 	echo'<span class="orange ellipses">...</span>';
+								// }
+
+								?> 
+							</div>
+						</a>
+					</div>
+					<div class="two columns">
+						<div class="m-topic"><?php echo $mt; ?></div>
+					</div>
+					<div class="two columns">
+						<div class="c-type"><?php echo $ct; ?></div>
+					</div>
+				</div>
+			</div>
 	<?php 
 	/*
 		if($ctr%6 ==0){
@@ -155,6 +184,7 @@
 	$ctr++;*/
 
 	 endwhile; ?>
+	</div>
 	</div>
 </div>
 

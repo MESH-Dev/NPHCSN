@@ -455,10 +455,54 @@ header{
 
 }
 
-.member-resource-item{
-	height:140px;
+.mr-resource-listing{
+	.header{
+		text-transform:uppercase;
+		font-weight:bold;
+		margin-bottom:40px;
+	}
+	.member-resource-item{
+		//height:140px;
+		border-bottom: 1px solid $divider_line;
+		padding-bottom:10px;
+		margin-bottom:10px;
+
+		.row{
+			margin:0;
+		}
+		.the-title{
+			overflow:hidden;
+			white-space:nowrap;
+			position:relative;
+			&.overflow{
+				&:after{
+					content:"...";
+					background:white;
+					position:absolute;
+					right:0;
+					top:0;
+					bottom:0;
+					color:$orange;
+					padding:0 5px 0 5px;
+					height:100%;
+				}
+			}
+		}
+	}
 }
 
+.search-filter{
+	label{
+		font-weight:bold;
+		text-transform:uppercase;
+	}
+	input[type='search']{
+		background-color:white;
+		border:transparent;
+		border-bottom:2px solid black;
+		padding:5px 0;
+	}
+}
 .purple_text{
 	color: $purple;
 }
@@ -632,6 +676,8 @@ header{
 }
 
 .filter-row{
+	padding-bottom:30px;
+	text-align: center;
 
 	a{
 		color: white;
@@ -666,13 +712,86 @@ header{
 		}
 
 	}
-	padding-bottom:30px;
-	text-align: center;
+	
 }
 
 .mr-filters{
+	.reset{
+			display:inline-block;
+		}
+
 	[class*="-filter"]{
 		display:inline-block;
+		position:relative;
+		
+		p{
+			display:inline-block;
+		}
+		ul{
+			//position:absolute;
+			display:inline-block;
+			&:hover{
+				background-color:$grey;
+
+				li:not(.selected){
+					display:block;
+					//position:absolute;
+					z-index:1000;
+
+					// &:after{
+					// 	content:"";
+					// 	display:table;
+					// 	position:relative;
+					// }
+				}
+
+				.filter-sub{
+					left:0;
+				}
+			}
+			li{
+				list-style:none;
+				cursor:pointer;
+				color:$purple;
+				display:none;
+				text-transform:uppercase;
+				font-weight:bold;
+				position:relative;
+
+
+				&:hover,
+				&:active,
+				&:focus{
+					color:$orange;
+				}
+
+				&.selected{
+					color:$orange;
+					font-weight:bold;
+					display:block;
+				}
+			}
+
+			.filter-sub{
+				// display:none;
+				margin:0;
+				padding:0;
+				position:absolute;
+				left:-99999px;
+				z-index:1000;
+				height:200px;
+				overflow:auto;
+				width:200px;
+			}
+		}
+	}
+}
+
+.member-resource-item{
+
+	.m-topic,
+	.c-type{
+		text-transform:uppercase;
 	}
 }
 
@@ -834,4 +953,16 @@ footer{
 	margin-top: 25px;
 	display: inline;
 	float: left;
+}
+
+//Accessibility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
