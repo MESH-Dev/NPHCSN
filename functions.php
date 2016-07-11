@@ -336,14 +336,14 @@ function get_member_resources(){
   //$query = $_POST('query');
  
  //Make the search exlusive to entries or clicking the filter
- if ($post_slug == '*' && $post_slug_ct == "*"): //All posts?
+ if ($post_slug == '' && $post_slug_ct == " " ): //All posts? No filter
       $args = array(
       'post_type' => 'member_resources',
       'posts_per_page' => -1,
       'post_status' => 'publish'
       
       );
-elseif ($post_slug != '*' && $post_slug_ct != '*'): //Using the filter
+elseif ($post_slug != '' && $post_slug_ct != ''): //Using the filter - both filters have been used
       $args = array(
       'post_type' => 'member_resources',
       'posts_per_page' => -1,
@@ -363,7 +363,7 @@ elseif ($post_slug != '*' && $post_slug_ct != '*'): //Using the filter
           ),
         ),
       );
- elseif ($post_slug != '*' && $post_slug_ct == '*'): //Using the filter
+ elseif ($post_slug != '' && $post_slug_ct == ''  ): //Using the filter
       $args = array(
       'post_type' => 'member_resources',
       'posts_per_page' => -1,
@@ -377,7 +377,7 @@ elseif ($post_slug != '*' && $post_slug_ct != '*'): //Using the filter
           ),
         ),
       );
-elseif ($post_slug_ct != '*' && $post_slug == '*'): //Using the filter
+elseif ($post_slug_ct != '' && $post_slug == ''  ): //Using the filter
       $args = array(
       'post_type' => 'member_resources',
       'posts_per_page' => -1,
@@ -426,26 +426,32 @@ endif;
                 $mr_link = get_field('mrf_link'); 
                 
                 $target = '';
-                $external = get_field('link_type', $post->ID); 
+                $curated = get_field('curated', $post->ID); 
 
                 $date = get_the_date('m.d.y');
+                $directory = get_bloginfo('template_directory');
 
-                if ($external == 'true'){
-                        $target="_blank";
+                if ($curated == 'true'){
+                        //$directory = bloginfo('template_directory');
+                        $target ='<img src="'. $directory .'/assets/img/curated.png">';
+
                 }else{
-                        $target="_self";
+                        $target="";
                     } 
 
                 $member_topics= get_the_terms($post->ID, 'member_topic');
                 //var_dump($member_topics);
                 $content_types= get_the_terms($post->ID, 'content_type');
 
-                $short_title = the_title('', '', false);
+                $short_title = get_the_title('', '', false);
                 $shortened_title = substr($short_title, 0, 73);
+                $length  =  strlen($short_title);
                 
-                if (strlen($short_title) >= 73){
+                if ($length >= 73){
                     $overflow = "overflow";
 
+                }else{
+                    $overflow="";
                 }
 
                 foreach ($member_topics as $member_topic){
@@ -461,16 +467,16 @@ endif;
           //endif; 
           echo '<div class="member-resource-item '. $mt . ' ' . $ct . '">
                     <div class="row">
-                        <div class="one columns the-date">' . $date .'</div>
+                        <div class="one columns alpha the-date">' . $date .'</div>
                             <div class="seven columns the-title ' . $overflow .'">
-                                <a href="' . $mr_link .'" target='. $target .'>
-                                    <div class="orange_text"> ' . $shortened_title . '</div>
+                                <a href="' . $mr_link .'">
+                                    <div class="orange_text"> '. $shortened_title . '</div>
                                 </a>
                             </div>
                         <div class="two columns">
                             <div class="m-topic">' . $mt . '</div>
                         </div>
-                        <div class="two columns">
+                        <div class="two columns omega">
                             <div class="c-type">' . $ct . '</div>
                         </div>
                     </div>

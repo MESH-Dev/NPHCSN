@@ -51,9 +51,17 @@
 </div> -->
 
 <div class="container">
-	<?php $title = get_field('mr_page_title', 'options');?>
+	<?php 
+	$title = get_field('mr_page_title', 'options');
+	$intro_text = get_field('mr_intro_text', 'options');
+	?>
 
-	<h2><?php echo $title; ?></h2>
+	<h2 class="page-title-inner"><?php echo $title; ?></h2>
+	
+	<p class="intro-text">
+		<?php echo $intro_text; ?>
+	</p>
+	
 </div>
 
 <div class="container mr-filters">
@@ -66,8 +74,9 @@
 	<div class="topic-filter">
 		<p>Filter by Topic</p>
 		<ul>
-			<li class="selected initial" data-filter="*">All
-				<ul class="filter-sub">
+			<li class="initial"><span class="text">All</span><img src="<?php bloginfo('template_directory'); ?>/assets/img/down-arrow-orange.png">
+				<ul class="filter-sub topic">
+					<li data-filter="">All</li>
 		<?php
 			$member_topics_filters = get_terms('member_topic');
 
@@ -85,9 +94,9 @@
 	<div class="content-filter">
 		<p>Filter by Content Type</p>
 		<ul>
-			<li class="selected initial" data-filter="*">All
-				<ul class="filter-sub">
-		
+			<li class="initial"><span class="text">All</span><img src="<?php bloginfo('template_directory'); ?>/assets/img/down-arrow-orange.png">
+				<ul class="filter-sub type">
+					<li data-filter="">All</li>
 		<?php
 			$content_type_filters = get_terms('content_type');
 
@@ -103,17 +112,26 @@
 
 		</ul>
 	</div>
-	<div class="reset" data-filter="*">Reset</div>
+	<div class="reset" data-filter="*">Show All</div>
+</div>
+
+<div class="container">
+	<div class="filtered">
+		<p class="filtered-title">Showing</p>
+		<div class="topic-filtered">Topic: <span>All</span></div>
+		<div class="type-filtered">Content Type: <span>All</span></div>
+	</div>
 </div>
 
 <div class="container mr-resource-listing">
+	<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
 	<div class="row">
-	<div class="header">
-		<div class="one columns">Date</div>
-		<div class="seven columns">Title</div>
-		<div class="two columns">Topic</div>
-		<div class="two columns">Format</div>
-	</div>
+		<div class="header">
+			<div class="one columns alpha">Date</div>
+			<div class="seven columns">Title</div>
+			<div class="two columns">Topic</div>
+			<div class="two columns omega">Format</div>
+		</div>
 	<!--<div class="row">-->
 	<?php 
 	global $query_string;
@@ -131,7 +149,7 @@
 		
 		$ct_filter = '';
 		$mt_filter = '';
-		$external = get_field('link_type'); 
+		$curated = get_field('curated'); 
 
 		$date = get_the_date('m.d.y');
 
@@ -147,15 +165,19 @@
 	?>
 			<div class="member-resource-item <?php echo $ct . ' ' . $mt ?>">
 				<div class="row">
-					<div class="one columns the-date"><?php echo $date; ?></div>
+					<div class="one columns alpha the-date"><?php echo $date; ?></div>
 					<?php 
 						$short_title = the_title('', '', false);
 						$shortened_title = substr($short_title, 0, 73);
 					?>
 					<div class="seven columns the-title <?php if(strlen($short_title) >= 73){echo "overflow";} ?>">
-			 			<a href="<?php echo $mr_link;?>" <?php if($external=="true"){ ?> target='_blank'<?php }?>>
-					 		<div class=" orange_text">	
+			 			<a href="<?php echo $mr_link;?>">
+					 		<div class=" orange_text">
+					 			<?php if ($curated == "true") { ?>
+					 				<img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png">
+					 			<?php } ?>
 								<?php
+
 
 								echo $shortened_title; //echo " ".strlen($shortened_title); //echo " ".strlen($short_title); echo " ".strlen($shortened_title);
 
@@ -170,11 +192,12 @@
 					<div class="two columns">
 						<div class="m-topic"><?php echo $mt; ?></div>
 					</div>
-					<div class="two columns">
+					<div class="two columns omega">
 						<div class="c-type"><?php echo $ct; ?></div>
 					</div>
 				</div>
-			</div>
+			
+			</div> <!-- end member-resource-item -->
 	<?php 
 	/*
 		if($ctr%6 ==0){
@@ -184,8 +207,26 @@
 	$ctr++;*/
 
 	 endwhile; ?>
+	</div> <!-- end row -->
+</div> <!-- end mr-resource-listing -->
+	 <div class="container quicklinks">
+	 	<h2>Community Quicklinks</h2>
+	 	<div class="row">
+		 	<div class="three columns">
+		 		<a href="#">Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
+	 		</div>
+	 		<div class="three columns">
+		 		<a href="#">Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
+	 		</div>
+	 		<div class="three columns">
+		 		<a href="#">Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
+	 		</div>
+	 		<div class="three columns">
+		 		<a href="#" class=>Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
+	 		</div>
+	 	</div>
+	
 	</div>
-	</div>
-</div>
+<!-- </div> -->
 
 <?php get_footer(); ?>
