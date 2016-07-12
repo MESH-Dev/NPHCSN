@@ -142,7 +142,7 @@ jQuery(document).ready(function($){
 
    //=============================================================
 
-   $('.loader').hide();
+   $('.loader, .loader-container').hide();
 
 	//AJAX for member resource filtering
 
@@ -153,7 +153,8 @@ jQuery(document).ready(function($){
       var is_loading = false;
        if (is_loading == false){
             is_loading = true;
- 
+ 			
+ 			$('loader-container').removeClass('hide');
             $('.loader, .loader-container').fadeIn(200);
 
             var data = {

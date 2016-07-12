@@ -221,7 +221,7 @@
 
 	 endwhile; ?>
 
-	 <div class="loader-container">
+	 <div class="loader-container hide">
 		<div class="loader ">
 			<img class="loader-animate" src="<?php bloginfo('template_directory'); ?>/assets/img/Topwheel.svg">
 		</div>
