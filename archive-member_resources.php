@@ -65,16 +65,16 @@
 </div>
 
 <div class="container mr-filters">
-	<div class="search-filter">
-		<form action="<?php home_url() ?>" method="get">
-			<label for="search">Search Resources</label>
-			<input type="search" name="s" id="search" placeholder="" value="" />
-		</form>
+	
+	<div class="label">
+		Filter by:
 	</div>
+
+	<!-- Topic -->
 	<div class="topic-filter">
-		<p>Filter by Topic</p>
+		<!-- <p>Topic</p> -->
 		<ul>
-			<li class="initial"><span class="text">All</span><img src="<?php bloginfo('template_directory'); ?>/assets/img/down-arrow-orange.png">
+			<li class="initial"><span class="text">Topic</span><img src="<?php bloginfo('template_directory'); ?>/assets/img/down-arrow-orange.png">
 				<ul class="filter-sub topic">
 					<li data-filter="">All</li>
 		<?php
@@ -91,10 +91,13 @@
 			</li>	
 		</ul>
 	</div>
+	<!-- ============= -->
+
+	<!-- Format -->
 	<div class="content-filter">
-		<p>Filter by Content Type</p>
+		<!-- <p>Format</p> -->
 		<ul>
-			<li class="initial"><span class="text">All</span><img src="<?php bloginfo('template_directory'); ?>/assets/img/down-arrow-orange.png">
+			<li class="initial"><span class="text">Format</span><img src="<?php bloginfo('template_directory'); ?>/assets/img/down-arrow-orange.png">
 				<ul class="filter-sub type">
 					<li data-filter="">All</li>
 		<?php
@@ -112,19 +115,29 @@
 
 		</ul>
 	</div>
-	<div class="reset" data-filter="*">Show All</div>
+	<!-- ========== -->
+	<!-- Search -->
+	<div class="search-filter">
+		<form action="<?php home_url() ?>" method="get">
+			<label for="search">Search Resources</label>
+			<input type="search" name="s" id="search" placeholder="" value="" /><img src="<?php bloginfo('template_directory'); ?>/assets/img/search.png">
+		</form>
+	</div>
+	<!-- ============= -->
+	
 </div>
 
 <div class="container">
 	<div class="filtered">
-		<p class="filtered-title">Showing</p>
-		<div class="topic-filtered">Topic: <span>All</span></div>
-		<div class="type-filtered">Content Type: <span>All</span></div>
+		<!-- <p class="filtered-title">Resources Showing:</p> -->
+		<div class="topic-filtered">Resources Showing:<span>All</span></div>
+		<div class="type-filtered">Format Showing:<span>All</span></div>
+		<div class="reset" data-filter="*">Reset Filters <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></div>
 	</div>
 </div>
 
 <div class="container mr-resource-listing">
-	<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
+	
 	<div class="row">
 		<div class="header">
 			<div class="one columns alpha">Date</div>
@@ -207,8 +220,18 @@
 	$ctr++;*/
 
 	 endwhile; ?>
+
+	 <div class="loader-container">
+		<div class="loader ">
+			<img class="loader-animate" src="<?php bloginfo('template_directory'); ?>/assets/img/Topwheel.svg">
+		</div>
+	</div>
 	</div> <!-- end row -->
+	
 </div> <!-- end mr-resource-listing -->
+<div class="container">
+	<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
+</div>
 	 <div class="container quicklinks">
 	 	<h2>Community Quicklinks</h2>
 	 	<div class="row">

@@ -142,6 +142,8 @@ jQuery(document).ready(function($){
 
    //=============================================================
 
+   $('.loader').hide();
+
 	//AJAX for member resource filtering
 
 	function loadMemberResources (memberResource, contentType, query) { //*
@@ -152,7 +154,7 @@ jQuery(document).ready(function($){
        if (is_loading == false){
             is_loading = true;
  
-            $('#loader, .loader-container').fadeIn(200);
+            $('.loader, .loader-container').fadeIn(200);
 
             var data = {
                 action: 'get_member_resources',  //Our function from function.php
@@ -174,11 +176,11 @@ jQuery(document).ready(function($){
                 if(response != 0){
 
                   
-                  $('.mr-resource-listing').append(response);
+                  $('.mr-resource-listing .row').append(response);
                   //$container.waitForImages(function() {
                   //   $('#loader').hide();
                   // });                  
- 					$('#loader').fadeOut(1000);
+ 					$('.loader').fadeOut(1000);
  					$('.loader-container').fadeOut(300);
  					$('.member-resource-item').addClass('hide');
  					//$('.projects-nav ul > li').removeClass('selected');
