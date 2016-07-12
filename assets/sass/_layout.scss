@@ -850,7 +850,7 @@ header{
 }
 
 .filtered{
-	margin-bottom:20px;
+	margin-bottom:40px;
 	*{
 		display:inline-block;
 	}
@@ -899,7 +899,10 @@ header{
 	margin-top:70px;
 	margin-bottom:30px;
 	h2{
-		margin-bottom:30px;
+		margin-bottom: 20px;
+	    font-size: 18px;
+	    font-weight: bold;
+	    text-transform: uppercase;
 	}
 	a{
 		font-size: 18px;

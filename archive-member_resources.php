@@ -58,9 +58,10 @@
 
 	<h2 class="page-title-inner"><?php echo $title; ?></h2>
 	
-	<p class="intro-text">
-		<?php echo $intro_text; ?>
-	</p>
+	<div class="intro-text">
+		<p><?php echo $intro_text; ?></p>
+		<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
+	</div>
 	
 </div>
 
@@ -229,9 +230,9 @@
 	</div> <!-- end row -->
 	
 </div> <!-- end mr-resource-listing -->
-<div class="container">
+<!-- <div class="container">
 	<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
-</div>
+</div> -->
 	 <div class="container quicklinks">
 	 	<h2>Community Quicklinks</h2>
 	 	<div class="row">
