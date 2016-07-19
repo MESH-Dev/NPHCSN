@@ -64,9 +64,29 @@
 
 <body>
 
-<header>
-	<div class="container">
+<?php 
 
+			
+
+			if (is_user_logged_in()){ 
+
+				$id = get_current_user_id();
+				//var_dump($id);
+				$user_info = get_userdata($id);
+				$first_name = $user_info->first_name;
+				$last_name = $user_info->last_name;
+				$job_title = $user_info->job_title;
+				$company = $user_info->company_name;
+
+				?>
+		<div class="login-bar">
+			<p>Welcome to The National Partnership Community Area, <?php echo $first_name . ' ' . $last_name ?> <a href="#">Go to Dashboard</a> | <a href="#">Log Out</a></p>
+		</div>
+		<?php } ?>
+<header>
+	
+	<div class="container">
+		
 		<div class="five columns logo">
 			<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/img/new/NPHCSN_logo_Hi.png" alt="The National Partnership for the Health Care Safety Net"></a>
 		</div>

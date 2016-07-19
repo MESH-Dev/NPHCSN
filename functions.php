@@ -109,6 +109,15 @@ if( function_exists('acf_add_options_page') ) {
     
 }
 
+//Redirect users to login screen when not logged in
+
+add_action('admin_init', 'redirect_login');
+
+function redirect_login(){
+    if(!is_user_logged_in() && is_page('member_resources')) {
+        wp_redirect(get_bloginfo('url').'/login');
+    }
+}
 
 // Register Custom Post Type
 function custom_post_type_resources() {
@@ -363,7 +372,7 @@ elseif ($post_slug != '' && $post_slug_ct != ''): //Using the filter - both filt
           ),
         ),
       );
- elseif ($post_slug != '' && $post_slug_ct == ''  ): //Using the filter
+ elseif ($post_slug != '' && $post_slug_ct == ''  ): //Using the filter - Topic filter used
       $args = array(
       'post_type' => 'member_resources',
       'posts_per_page' => -1,
@@ -377,7 +386,7 @@ elseif ($post_slug != '' && $post_slug_ct != ''): //Using the filter - both filt
           ),
         ),
       );
-elseif ($post_slug_ct != '' && $post_slug == ''  ): //Using the filter
+elseif ($post_slug_ct != '' && $post_slug == ''  ): //Using the filter - Content filter used
       $args = array(
       'post_type' => 'member_resources',
       'posts_per_page' => -1,
@@ -477,7 +486,7 @@ endif;
                             <div class="m-topic">' . $mt . '</div>
                         </div>
                         <div class="two columns omega">
-                            <div class="c-type">' . $ct . '</div>
+                            <div class="c-type">.' . $ct . '</div>
                         </div>
                     </div>
                 </div>';

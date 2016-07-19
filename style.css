@@ -2425,34 +2425,166 @@ header .show {
     -ms-transform: rotate(360deg);
   }
 }
+/* Signup styles
+================================================== */
+/* line 1054, assets/sass/_layout.scss */
+.signup {
+  margin: 60px 0;
+}
+/* line 1057, assets/sass/_layout.scss */
+.signup div[id^="frm_field_"] {
+  margin-bottom: 20px;
+}
+/* line 1061, assets/sass/_layout.scss */
+.signup label {
+  text-transform: uppercase;
+  font-weight: 900;
+  vertical-align: bottom;
+}
+/* line 1067, assets/sass/_layout.scss */
+.signup label,
+.signup input {
+  display: inline-block;
+}
+/* line 1072, assets/sass/_layout.scss */
+.signup input {
+  font-size: 16px;
+}
+/* line 1076, assets/sass/_layout.scss */
+.signup input[type="text"],
+.signup input[type="password"],
+.signup input[type="email"] {
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 0;
+  width: 400px;
+}
+/* line 1090, assets/sass/_layout.scss */
+.signup input[type="submit"] {
+  background: none !important;
+  padding: 0 !important;
+  padding-right: 15px !important;
+  color: #e86125 !important;
+  font-weight: 900 !important;
+  background-image: url("assets/img/right-arrow-orange.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: 95% center !important;
+  font-size: 16px !important;
+}
+/* line 1101, assets/sass/_layout.scss */
+.signup input[type="submit"]:hover
+.signup input[type="submit"]:active, .signup input[type="submit"]:focus {
+  opacity: .7;
+}
+/* line 1108, assets/sass/_layout.scss */
+.signup .frm_ajax_loading {
+  display: none;
+}
+
+/* Community Login styles
+================================================== */
+/* line 1117, assets/sass/_layout.scss */
+.intro .intro-text {
+  margin-bottom: 60px;
+}
+
+/* line 1126, assets/sass/_layout.scss */
+.community-login [class^="login-"] label,
+.signup [class^="login-"] label {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+/* line 1132, assets/sass/_layout.scss */
+.community-login [class^="login-"] label,
+.community-login [class^="login-"] input,
+.signup [class^="login-"] label,
+.signup [class^="login-"] input {
+  display: inline-block;
+}
+/* line 1141, assets/sass/_layout.scss */
+.community-login [class^="login-"] input[type="text"],
+.community-login [class^="login-"] input[type="password"],
+.signup [class^="login-"] input[type="text"],
+.signup [class^="login-"] input[type="password"] {
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 0;
+  width: 400px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+/* line 1155, assets/sass/_layout.scss */
+.community-login [class^="login-"] #c-submit,
+.signup [class^="login-"] #c-submit {
+  background: none !important;
+  padding: 0 !important;
+  padding-right: 15px !important;
+  color: #e86125 !important;
+  font-weight: 900 !important;
+  background-image: url("assets/img/right-arrow-orange.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: 95% center !important;
+  font-size: 16px !important;
+}
+/* line 1166, assets/sass/_layout.scss */
+.community-login [class^="login-"] #c-submit:hover
+.community-login [class^="login-"] #c-submit:active, .community-login [class^="login-"] #c-submit:focus,
+.signup [class^="login-"] #c-submit:hover
+.community-login [class^="login-"] #c-submit:active,
+.signup [class^="login-"] #c-submit:focus, .community-login [class^="login-"] #c-submit:hover
+.signup [class^="login-"] #c-submit:active,
+.signup [class^="login-"] #c-submit:hover
+.signup [class^="login-"] #c-submit:active {
+  opacity: .7;
+}
+
+/* Login bar
+================================================== */
+/* line 1177, assets/sass/_layout.scss */
+.login-bar {
+  text-align: right;
+  font-size: 11px;
+}
+/* line 1180, assets/sass/_layout.scss */
+.login-bar p {
+  margin: 0;
+  padding: 5px 30px 5px 0;
+}
+/* line 1184, assets/sass/_layout.scss */
+.login-bar a {
+  text-transform: uppercase;
+}
+
 /* FOOTER Styles
 ================================================== */
-/* line 1052, assets/sass/_layout.scss */
+/* line 1191, assets/sass/_layout.scss */
 footer {
   font-size: 12px;
   line-height: 17px;
 }
 
-/* line 1057, assets/sass/_layout.scss */
+/* line 1196, assets/sass/_layout.scss */
 .footer-top {
   width: 100%;
   height: 140px;
   background-color: #2f1d35;
 }
-/* line 1062, assets/sass/_layout.scss */
+/* line 1201, assets/sass/_layout.scss */
 .footer-top .footer-links {
   padding-top: 30px;
 }
-/* line 1064, assets/sass/_layout.scss */
+/* line 1203, assets/sass/_layout.scss */
 .footer-top .footer-links ul {
   margin: 0;
   padding: 0;
 }
-/* line 1067, assets/sass/_layout.scss */
+/* line 1206, assets/sass/_layout.scss */
 .footer-top .footer-links ul li {
   list-style-type: none;
 }
-/* line 1069, assets/sass/_layout.scss */
+/* line 1208, assets/sass/_layout.scss */
 .footer-top .footer-links ul li a {
   font-weight: 900;
   text-transform: uppercase;
@@ -2460,7 +2592,7 @@ footer {
   margin-bottom: 4px;
   display: block;
 }
-/* line 1075, assets/sass/_layout.scss */
+/* line 1214, assets/sass/_layout.scss */
 .footer-top .footer-links ul li a:after {
   content: url("assets/img/right-arrow.png");
   position: relative;
@@ -2468,78 +2600,78 @@ footer {
   left: 15px;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 1069, assets/sass/_layout.scss */
+  /* line 1208, assets/sass/_layout.scss */
   .footer-top .footer-links ul li a {
     margin-bottom: 0px;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 1057, assets/sass/_layout.scss */
+  /* line 1196, assets/sass/_layout.scss */
   .footer-top {
     height: 310px;
   }
 }
 @media only screen and (max-width: 479px) {
-  /* line 1057, assets/sass/_layout.scss */
+  /* line 1196, assets/sass/_layout.scss */
   .footer-top {
     height: 400px;
   }
 }
-/* line 1097, assets/sass/_layout.scss */
+/* line 1236, assets/sass/_layout.scss */
 .footer-top .footer-logos {
   padding-top: 30px;
 }
-/* line 1100, assets/sass/_layout.scss */
+/* line 1239, assets/sass/_layout.scss */
 .footer-top .footer-logos span.logo-title {
   width: 100%;
   display: block;
   color: #e86125;
   margin-bottom: 20px;
 }
-/* line 1106, assets/sass/_layout.scss */
+/* line 1245, assets/sass/_layout.scss */
 .footer-top .footer-logos img {
   display: inline-block;
   padding: 0 40px 0px 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 1106, assets/sass/_layout.scss */
+  /* line 1245, assets/sass/_layout.scss */
   .footer-top .footer-logos img {
     padding: 0 10px 0px 0;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 1106, assets/sass/_layout.scss */
+  /* line 1245, assets/sass/_layout.scss */
   .footer-top .footer-logos img {
     padding: 0 10px 20px 0;
   }
 }
 @media only screen and (max-width: 479px) {
-  /* line 1106, assets/sass/_layout.scss */
+  /* line 1245, assets/sass/_layout.scss */
   .footer-top .footer-logos img {
     padding: 0 10px 20px 0;
   }
 }
 
-/* line 1123, assets/sass/_layout.scss */
+/* line 1262, assets/sass/_layout.scss */
 .footer-bottom {
   width: 100%;
   height: 70px;
   background-color: white;
 }
-/* line 1127, assets/sass/_layout.scss */
+/* line 1266, assets/sass/_layout.scss */
 .footer-bottom .footer-text {
   padding: 20px 0  10px 0;
 }
-/* line 1130, assets/sass/_layout.scss */
+/* line 1269, assets/sass/_layout.scss */
 .footer-bottom .mesh {
   text-align: right;
 }
-/* line 1133, assets/sass/_layout.scss */
+/* line 1272, assets/sass/_layout.scss */
 .footer-bottom .mesh a {
   font-weight: bold;
 }
 
-/* line 1141, assets/sass/_layout.scss */
+/* line 1280, assets/sass/_layout.scss */
 #eb {
   width: 56px;
   float: left;
@@ -2547,7 +2679,7 @@ footer {
   display: inline;
 }
 
-/* line 1148, assets/sass/_layout.scss */
+/* line 1287, assets/sass/_layout.scss */
 #k {
   width: 75px;
   margin-top: 25px;
@@ -2555,7 +2687,7 @@ footer {
   float: left;
 }
 
-/* line 1156, assets/sass/_layout.scss */
+/* line 1295, assets/sass/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+
+<?php //if (is_user_logged_in()){ ?>
 <div class="page-header shaun">
 	<div class="container">
 		<div class="twelve columns page-title">
@@ -207,7 +209,7 @@
 						<div class="m-topic"><?php echo $mt; ?></div>
 					</div>
 					<div class="two columns omega">
-						<div class="c-type"><?php echo $ct; ?></div>
+						<div class="c-type">.<?php echo $ct; ?></div>
 					</div>
 				</div>
 			
@@ -251,6 +253,15 @@
 	 	</div>
 	
 	</div>
-<!-- </div> -->
+<?php //} else{ 
+
+	//$home = bloginfo('url');
+	//$login = $home . '/login';
+
+	//header('Location:' . $login);
+	//wp_redirect($login);
+	//exit();
+	//}?>
+
 
 <?php get_footer(); ?>
