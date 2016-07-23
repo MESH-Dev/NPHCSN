@@ -211,6 +211,71 @@ jQuery(document).ready(function($){
         }    
   }
 
+  function loadDiscussions (discussionListing, query) { //*
+ 
+      //console.log(projectType);
+      //console.log(query);  //*
+      var is_loading = false;
+       if (is_loading == false){
+            is_loading = true;
+ 			
+ 			$('loader-container').removeClass('hide');
+            $('.loader, .loader-container').fadeIn(200);
+
+            var data = {
+                action: 'get_discussions',  //Our function from function.php
+                discussionListing: discussionListing, //the return value
+                //contentType: contentType,
+                query: query //Are we using the search?  
+            };
+            jQuery.post(ajaxurl, data, function(response) {
+                // now we have the response, so hide the loader
+
+                console.log(response);
+                console.log(data);
+                //console.log(memberResource);
+                //console.log(contentType);
+                //console.log(get_member_resources);
+                
+               //$('a#load-more-photos').show();
+                // append: add the new statments to the existing data
+                if(response != 0){
+
+                  
+                  $('.discussion-listing .row').append(response);
+                  //$container.waitForImages(function() {
+                  //   $('#loader').hide();
+                  // });                  
+ 					$('.loader').fadeOut(1000);
+ 					$('.loader-container').fadeOut(300);
+ 					$('.discussion-item').addClass('hide');
+ 					//$('.projects-nav ul > li').removeClass('selected');
+ 					//Adds slideinLeft and animated classes to each project tile in order
+ 					$('.discussion-item').each(function(i, el){
+ 						//Show each item in it's turn
+ 						window.setTimeout(function(){
+ 						$(el).removeClass('hide').addClass('fadeIn animated');
+ 						}, 50 * i);
+ 					});
+ 					$('.search_form')
+ 						.removeClass('slideInLeft')
+ 						.addClass('slideOutLeft');
+ 					// $('.projects-nav.gallery')
+ 					// 	.removeClass('slideInLeft')
+ 					// 	.addClass('slideOutLeft');
+                  is_loading = false;
+                }
+                else{
+                  $('#loader').hide();
+                  
+                  is_loading = false;
+                }
+
+                
+            });
+        }    
+  }
+
 // $('[class*="-filter"] ul li').click(function(){
 // 	var memberResource;
 // 	var contentType;
@@ -238,7 +303,7 @@ jQuery(document).ready(function($){
 // });
 
 
-$('[class*="filter-"] li').click(function(){
+$('.mr-filters [class*="filter-"] li').click(function(){
 	
 	$(this).parent().find('li.selected').removeClass('selected');
 	
@@ -246,7 +311,7 @@ $('[class*="filter-"] li').click(function(){
 	
 	var memberResource = $('.topic li.selected').attr('data-filter');
 	var contentType = $('.type li.selected').attr('data-filter');
-	
+	//var directoryListing = $('.d-filters .topic li.selected').attr('data-filter');
 	
 	if (memberResource != ''){
 	$('.topic-filtered span').text(memberResource).addClass('btn');
@@ -262,31 +327,85 @@ $('[class*="filter-"] li').click(function(){
 
 	//Delete whatever is already in the result
 	$('.member-resource-item').detach();
+	$('.discussion-item').detach();
 	$('.post-error').detach();
 
 	loadMemberResources(memberResource,contentType,'');
+	//loadDiscussions(memberResource, '');
 	console.log('Member resource = ' + memberResource);
 	console.log('Content type = ' + contentType);
 	
 
 });
 
-$('.reset').click(function(){
+$('.d-filters [class*="filter-"] li').click(function(){
+	
+	$(this).parent().find('li.selected').removeClass('selected');
+	
+	$(this).addClass('selected');
+	
+	 //var memberResource = $('.topic li.selected').attr('data-filter');
+	// var contentType = $('.type li.selected').attr('data-filter');
+	var discussionListing = $('.d-filters .topic li.selected').attr('data-filter');
+	console.log(discussionListing);
+	
+
+	if (discussionListing != ''){
+	$('.topic-filtered span').text(discussionListing).addClass('btn');
+	}else{
+		$('.topic-filtered span').text('All').removeClass('btn');
+	}
+
+	//Delete whatever is already in the result
+	//$('.member-resource-item').detach();
+	$('.discussion-item').detach();
+	$('.post-error').detach();
+
+	//loadMemberResources(memberResource,contentType,'');
+	loadDiscussions(discussionListing, '');
+	//console.log('Member resource = ' + memberResource);
+	//console.log('Content type = ' + contentType);
+	
+
+});
+
+$('.mr-reset').click(function(){
 	var memberResource = "";
 	var contentType = "";
+	//var discussionListing = "";
 
 	$('.member-resource-item').detach();
+	//$('.discussion-listing').detach();
 	$('.post-error').detach();
 
 	$('.topic-filtered span').text('all');
 	$('.type-filtered span').text('all');
 
 	loadMemberResources(memberResource,contentType,'');
+	// loadDiscussions(discussionListing, '');
 
 	$('[class*="filter-"]').find('li.selected').removeClass('selected');
 
 });
 
+$('.d-reset').click(function(){
+	// var memberResource = "";
+	// var contentType = "";
+	var discussionListing = "";
+
+	// $('.member-resource-item').detach();
+	$('.discussion-item').detach();
+	$('.post-error').detach();
+
+	$('.topic-filtered span').text('all');
+	//$('.type-filtered span').text('all');
+
+	//loadMemberResources(memberResource,contentType,'');
+	loadDiscussions(discussionListing, '');
+
+	$('[class*="filter-"]').find('li.selected').removeClass('selected');
+
+});
 // $('.content-filter ul li').click(function(){
 // 	var contentType = $(this).attr('data-filter');
 // 	//console.log("Content Type is:" + contentType);
@@ -302,7 +421,7 @@ $('.reset').click(function(){
 	
 // });
 
-$('.search-filter form').submit(function(e){
+$('.mr-search-filter form').submit(function(e){
 	e.preventDefault();
 	var $form = $(this);
 	var $input = $form.find('input[name="s"]');
@@ -311,10 +430,18 @@ $('.search-filter form').submit(function(e){
 	loadMemberResources('','',query);
 	$('.member-resource-item').detach();
 	$('.post-error').detach();
-	// $('.gallery-gateway')
-	// 	.removeClass('slideOutLeft')
-	// 	.addClass('slideInLeft');
-	// $('.post.error').detach();
+	
+});
+
+$('.d-search-filter form').submit(function(e){
+	e.preventDefault();
+	var $form = $(this);
+	var $input = $form.find('input[name="s"]');
+	var query = $input.val();
+	console.log(query);
+	loadDiscussions('',query);
+	$('.discussion-item').detach();
+	$('.post-error').detach();
 	
 });
 

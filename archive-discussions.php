@@ -67,7 +67,7 @@
 	
 </div>
 
-<div class="container mr-filters">
+<div class="container d-filters">
 	
 	<div class="label">
 		Filter by:
@@ -81,13 +81,13 @@
 				<ul class="filter-sub topic">
 					<li data-filter="">All</li>
 		<?php
-			$member_topics_filters = get_terms('member_topic');
+			$discussion_topics_filters = get_terms('member_topic');
 
-			foreach ($member_topics_filters as $member_topics_filter){
+			foreach ($discussion_topics_filters as $discussion_topics_filter){
 			
 		?>
-		<li data-filter="<?php echo $member_topics_filter->slug; ?>">
-			<?php echo $member_topics_filter->name; ?>
+		<li data-filter="<?php echo $discussion_topics_filter->slug; ?>">
+			<?php echo $discussion_topics_filter->name; ?>
 		</li>
 		<?php } ?>
 			</ul>
@@ -97,8 +97,7 @@
 	<!-- ============= -->
 
 	<!-- Format -->
-	<div class="content-filter">
-		<!-- <p>Format</p> -->
+	<!-- <div class="content-filter">
 		<ul>
 			<li class="initial"><span class="text">Format</span><img src="<?php bloginfo('template_directory'); ?>/assets/img/down-arrow-orange.png">
 				<ul class="filter-sub type">
@@ -110,17 +109,17 @@
 			
 		?>
 		<li data-filter="<?php echo $content_type_filter->slug; ?>">
-			<?php echo $content_type_filter->name; ?>
+			<?php echo $content_type_filter->slug; ?>
 		</li>
 		<?php } ?>
 		</ul>
 		</li>
 
 		</ul>
-	</div>
+	</div> -->
 	<!-- ========== -->
 	<!-- Search -->
-	<div class="mr-search-filter search-filter">
+	<div class="d-search-filter search-filter">
 		<form action="<?php home_url() ?>" method="get">
 			<label for="search">Search Resources</label>
 			<input type="search" name="s" id="search" placeholder="" value="" /><img src="<?php bloginfo('template_directory'); ?>/assets/img/search.png">
@@ -133,25 +132,25 @@
 <div class="container">
 	<div class="filtered">
 		<!-- <p class="filtered-title">Resources Showing:</p> -->
-		<div class="topic-filtered">Resources Showing:<span>All</span></div>
-		<div class="type-filtered">Format Showing:<span>All</span></div>
-		<div class="mr-reset reset" data-filter="*">Reset Filters <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></div>
+		<div class="topic-filtered">Discussion Topics Showing:<span>All</span></div>
+		<!-- <div class="type-filtered">Format Showing:<span>All</span></div> -->
+		<div class="d-reset reset" data-filter="*">Reset Filters <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></div>
 	</div>
 </div>
 
-<div class="container mr-resource-listing">
+<div class="container discussion-listing">
 	
 	<div class="row">
 		<div class="header">
 			<div class="one columns alpha">Date</div>
-			<div class="seven columns">Title</div>
-			<div class="two columns">Topic</div>
-			<div class="two columns omega">Format</div>
+			<div class="eight columns">Title</div>
+			<div class="three columns">Topic</div>
+			<!-- <div class="two columns omega">Format</div> -->
 		</div>
 	<!--<div class="row">-->
 	<?php 
 	global $query_string;
-	query_posts( '&post_type=member_resources' . '&posts_per_page=-1' );
+	query_posts( '&post_type=discussions' . '&posts_per_page=-1' );
 	$ctr = 1;
 	while ( have_posts() ) : the_post(); 
 
@@ -160,7 +159,8 @@
 		$resource_imageURL = $resource_imageArray['sizes']['small'];
 		$mr_link = get_field('mrf_link');
 		//$locations = wp_get_post_terms($post->ID, 'location');
-		$member_topics= wp_get_post_terms($post->ID, 'member_topic');
+		$discussions= wp_get_post_terms($post->ID, 'member_topic');
+		//var_dump($discussions);
 		$content_types= wp_get_post_terms($post->ID, 'content_type');
 		
 		$ct_filter = '';
@@ -169,27 +169,26 @@
 
 		$date = get_the_date('m.d.y');
 
-		foreach ($member_topics as $member_topic){
-			$mt = $member_topic->name;
-			$ms = $member_topic->slug;
-			$mt_filter .= $member_topic->slug . ' ';
+		foreach ($discussions as $discussion){
+			$dt = $discussion->name;
+			$ds = $discussion->slug;
+			//$dt_filter .= $dt->slug . ' ';
 		}
 		foreach ($content_types as $content_type){
-			$ct = $content_type->name;
-			$cs = $content_type->slug;
-			$ct_filter .= $content_type->slug . ' ';
+			//$ct = $content_type->slug;
+			//$ct_filter .= $content_type->slug . ' ';
 		}
 	 
 	?>
-			<div class="member-resource-item <?php echo $cs . ' ' . $ms ?>">
+			<div class="discussion-item <?php echo $ds . ' ' . $ds ?>">
 				<div class="row">
 					<div class="one columns alpha the-date"><?php echo $date; ?></div>
 					<?php 
 						$short_title = the_title('', '', false);
 						$shortened_title = substr($short_title, 0, 73);
 					?>
-					<div class="seven columns the-title <?php if(strlen($short_title) >= 73){echo "overflow";} ?>">
-			 			<a href="<?php echo $mr_link;?>">
+					<div class="eight columns the-title <?php if(strlen($short_title) >= 73){echo "overflow";} ?>">
+			 			<a href="<?php the_permalink(); ?>">
 					 		<div class=" orange_text">
 					 			<?php if ($curated == "true") { ?>
 					 				<img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png">
@@ -207,12 +206,12 @@
 							</div>
 						</a>
 					</div>
-					<div class="two columns">
-						<div class="m-topic"><?php echo $mt; ?></div>
+					<div class="three columns">
+						<div class="m-topic"><?php echo $dt; ?></div>
 					</div>
-					<div class="two columns omega">
+					<!-- <div class="two columns omega">
 						<div class="c-type">.<?php echo $ct; ?></div>
-					</div>
+					</div> -->
 				</div>
 			
 			</div> <!-- end member-resource-item -->

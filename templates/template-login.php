@@ -5,6 +5,8 @@ Template Name: Login Page
 ?>
 <?php get_header(); ?>
 
+<?php if (! is_user_logged_in()){ ?>
+
 <div class="page-header">
 	<div class="container">
 		<div class="twelve columns page-title">
@@ -14,9 +16,9 @@ Template Name: Login Page
 </div>
 
 <div class="container intro">
-	<h2 class="page-title-inner"><?php echo get_field('login_welcome'); ?></h2>
+	<h2 class="page-title-inner"><?php echo get_field('page_title'); ?></h2>
 	<div class="intro-text">
-		<p><?php echo get_field('login_welcome_text'); ?></p>
+		<p><?php echo get_field('page_intro_text'); ?></p>
 	</div>
 </div>
 
@@ -47,5 +49,19 @@ Template Name: Login Page
 		</div>
 	</div>
 </div>
+
+<?php } else { 
+
+	$home = get_home_url('/');
+	//$home = 'http://localhost:8888/nphcsn';
+	$login = $home . '/community-dashboard';
+
+	//header('Location:' . $login);
+	wp_redirect($login);
+
+	//auth_redirect();
+	//exit();
+	}
+	?>
 
 <?php get_footer(); ?>

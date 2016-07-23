@@ -457,7 +457,8 @@ header{
 
 }
 
-.mr-resource-listing{
+.mr-resource-listing,
+.discussion-listing{
 	position:relative;
 	min-height:300px;
 	.header{
@@ -465,7 +466,8 @@ header{
 		font-weight:bold;
 		margin-bottom:40px;
 	}
-	.member-resource-item{
+	.member-resource-item,
+	.discussion-item{
 		//height:140px;
 		border-bottom: 1px solid $divider_line;
 		padding-bottom:10px;
@@ -478,6 +480,7 @@ header{
 			overflow:hidden;
 			white-space:nowrap;
 			position:relative;
+			font-weight:bold;
 			&.overflow{
 				&:after{
 					content:"...";
@@ -496,7 +499,8 @@ header{
 }
 
 @media only screen and (max-width:768px){
-	.mr-resource-listing{
+	.mr-resource-listing,
+	.discusion-listing{
 		.header{
 			display:none;
 		}
@@ -747,7 +751,8 @@ header{
 	
 }
 
-.mr-filters{
+.mr-filters,
+.d-filters{
 	margin-bottom:20px;
 	.reset{
 			display:inline-block;
@@ -1048,10 +1053,11 @@ header{
 }
 
 
-/* Signup styles
+/* Signup/Start a Discussion styles
 ================================================== */
 
-.signup{
+.signup,
+.start-discussion{
 	margin:60px 0;
 
 		div[id^="frm_field_"]{
@@ -1071,7 +1077,9 @@ header{
 
 		input{
 			font-size:16px;
+			box-shadow:none !important;
 		}
+
 
 		input[type="text"],
 		input[type="password"],
@@ -1087,15 +1095,23 @@ header{
 
 		}
 
+		.frm_submit{
+			text-align:right;
+		}
+
+		.frm_primary_label + .frm_opt_container{
+			display:inline;
+		}
+
 		input[type="submit"]{
 			background:none !important;
 			padding:0 !important;
-			padding-right:15px !important;
+			padding-right:25px !important;
 			color:$orange !important;
 			font-weight:900 !important;
 			background-image:url('assets/img/right-arrow-orange.png') !important;
 			background-repeat:no-repeat !important;
-			background-position:95% center !important;
+			background-position:100%center !important;
 			font-size:16px !important;
 
 			&:hover
@@ -1109,6 +1125,7 @@ header{
 			display:none;
 		}
 }
+
 
 
 /* Community Login styles
@@ -1169,6 +1186,63 @@ header{
 				opacity:.7;
 			}
 		}
+	}
+}
+
+.single-discussion{
+	.label{
+		text-transform:uppercase;
+		font-weight:800 !important;
+
+	}
+
+	.topic{
+		.result{
+			color:$orange;
+			text-transform:uppercase;
+
+		}
+	}
+}
+
+/* Community Dashboard
+================================================== */
+
+.dashboard{
+
+	.page-title-inner{
+		margin-bottom:30px;
+	}
+	
+	.the-title{
+		text-transform:uppercase;
+		color:$orange;
+		font-weight:800 !important;
+		position:relative;
+		&.overflow{
+				&:after{
+					content:"...";
+					background:white;
+					position:absolute;
+					right:0;
+					top:0;
+					bottom:0;
+					color:$orange;
+					padding:0 5px 0 5px;
+					height:100%;
+				}
+			}
+	}
+
+	.title{
+		text-transform:uppercase;
+		font-weight:800;
+		font-size:16px;
+		margin-bottom:20px;
+	}
+
+	.list-item{
+		border-bottom:1px solid $divider_line;
 	}
 }
 

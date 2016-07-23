@@ -1,15 +1,14 @@
 <?php
 /*
-Template Name: Signup Page
+Template Name:  Start a discussion
 */
 ?>
-
 <?php get_header(); ?>
 
 <div class="page-header">
 	<div class="container">
 		<div class="twelve columns page-title">
-			<h1><?php the_title(); ?></h1>
+			<h1><?php echo the_title(); ?></h1>
 		</div>
 	</div>
 </div>
@@ -22,12 +21,9 @@ Template Name: Signup Page
 </div>
 
 <div class="container">
-	<div class="seven columns">
-		<div class="signup">
-			<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 5, 'title' => false, 'description' => false ) ); ?>
-		</div>
+	<div class="start-discussion">
+		<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 6, 'title' => false, 'description' => false ) ); ?>
 	</div>
 </div>
-
 
 <?php get_footer(); ?>
