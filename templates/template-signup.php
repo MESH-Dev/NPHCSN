@@ -4,6 +4,8 @@ Template Name: Signup Page
 */
 ?>
 
+<?php if (! is_user_logged_in()){ ?>
+
 <?php get_header(); ?>
 
 <div class="page-header">
@@ -29,5 +31,18 @@ Template Name: Signup Page
 	</div>
 </div>
 
+<?php } else { 
+
+	$home = get_home_url('/');
+	//$home = 'http://localhost:8888/nphcsn';
+	$login = $home . '/community-dashboard';
+
+	//header('Location:' . $login);
+	wp_redirect($login);
+
+	//auth_redirect();
+	//exit();
+	}
+	?>
 
 <?php get_footer(); ?>

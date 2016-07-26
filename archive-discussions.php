@@ -2,10 +2,10 @@
 
 
 <?php if (is_user_logged_in()){ ?>
-<div class="page-header shaun">
+<div class="page-header">
 	<div class="container">
 		<div class="twelve columns page-title">
-			<h1>Member Resources</h1>
+			<h1>Discussion Board</h1>
 		</div>
 	</div>
 </div>
@@ -53,18 +53,23 @@
 </div> -->
 
 <div class="container">
-	<?php 
-	$title = get_field('mr_page_title', 'options');
-	$intro_text = get_field('mr_intro_text', 'options');
-	?>
-
-	<h2 class="page-title-inner"><?php echo $title; ?></h2>
-	
-	<div class="intro-text">
-		<p><?php echo $intro_text; ?></p>
-		<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
+	<div class="row">
+		<?php 
+		$title = get_field('db_page_title', 'options');
+		$intro_text = get_field('db_intro_text', 'options');
+		?>
+		<h2 class="page-title-inner"><?php echo $title; ?></h2>
+		<div class="seven columns alpha">
+			
+			<div class="intro-text">
+				<p><?php echo $intro_text; ?></p>
+				<!-- <p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p> -->
+			</div>
+		</div>
+		<div class="five columns">
+			<p><a class="more" href="<?php echo home_url('/'); ?>/start-a-discussion" ><span>Start a discussion</span> with the community <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a></p>
+		</div>
 	</div>
-	
 </div>
 
 <div class="container d-filters">
@@ -121,7 +126,7 @@
 	<!-- Search -->
 	<div class="d-search-filter search-filter">
 		<form action="<?php home_url() ?>" method="get">
-			<label for="search">Search Resources</label>
+			<label for="search">Search Discussions</label>
 			<input type="search" name="s" id="search" placeholder="" value="" /><img src="<?php bloginfo('template_directory'); ?>/assets/img/search.png">
 		</form>
 	</div>
@@ -233,31 +238,13 @@
 	</div> <!-- end row -->
 	
 </div> <!-- end mr-resource-listing -->
-<!-- <div class="container">
-	<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
-</div> -->
-	 <div class="container quicklinks">
-	 	<h2>Community Quicklinks</h2>
-	 	<div class="row">
-		 	<div class="three columns">
-		 		<a href="#">Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
-	 		</div>
-	 		<div class="three columns">
-		 		<a href="#">Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
-	 		</div>
-	 		<div class="three columns">
-		 		<a href="#">Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
-	 		</div>
-	 		<div class="three columns">
-		 		<a href="#" class=>Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
-	 		</div>
-	 	</div>
-	
-	</div>
-<?php } else{ 
 
-	//$home = bloginfo('url');
-	$home = 'http://localhost:8888/nphcsn';
+	<?php get_template_part('partials/quicklinks'); ?>
+
+<?php } else { 
+
+	$home = get_home_url('/');
+	//$home = 'http://localhost:8888/nphcsn';
 	$login = $home . '/login';
 
 	//header('Location:' . $login);
@@ -265,7 +252,8 @@
 
 	//auth_redirect();
 	//exit();
-	}?>
+	}
+	?>
 
 
 <?php get_footer(); ?>

@@ -688,7 +688,7 @@ header{
 /* #Resource Styles
 ================================================== */
 .intro-text{
-	width:50%;
+	//width:50%;
 	margin-bottom:30px;
 	@include breakpoint(tablet){
 		width:100%;
@@ -1209,11 +1209,15 @@ header{
 ================================================== */
 
 .dashboard{
+	margin-top:50px;
+	margin-bottom:50px;
 
 	.page-title-inner{
-		margin-bottom:30px;
+		margin-bottom:40px;
+		margin-top:0;
+
 	}
-	
+
 	.the-title{
 		text-transform:uppercase;
 		color:$orange;
@@ -1243,7 +1247,46 @@ header{
 
 	.list-item{
 		border-bottom:1px solid $divider_line;
+		padding-bottom:10px;
+		margin-bottom:10px;
 	}
+
+	.more{
+		span{
+			font-weight:800;
+		}
+	}
+}
+
+.more{
+		span{
+			font-weight:800;
+			text-transform:uppercase;
+		}
+
+
+}
+
+.identification{
+	color:white;
+
+	.the-row{
+		margin-bottom:10px;
+
+		div{
+			display:inline-block;
+		}
+
+		.label{
+			text-transform:uppercase;
+			font-weight:800;
+			//width:25%;
+			width:25%;
+		}
+	}
+	
+
+	
 }
 
 /* Login bar
@@ -1259,6 +1302,149 @@ header{
 		text-transform:uppercase;
 	}
 }
+
+/*Comments*/
+/*Comment Output*/
+
+.commentlist .reply {margin-right:30px;}
+.commentlist .reply a {}
+
+.commentlist .alt {}
+.commentlist .odd {}
+.commentlist .even {}
+.commentlist .thread-alt {}
+.commentlist .thread-odd {}
+.commentlist .thread-even {}
+.commentlist li ul.children .alt {}
+.commentlist li ul.children .odd {}
+.commentlist li ul.children .even {}
+
+.commentlist .vcard {}
+.commentlist .vcard cite.fn {}
+.commentlist .vcard span.says {}
+.commentlist .vcard img.photo {}
+.commentlist .vcard img.avatar {}
+.commentlist .vcard cite.fn a.url {}
+
+.commentlist .comment-meta {} 
+.commentlist .comment-meta a {}
+.commentlist .commentmetadata {}
+.commentlist .commentmetadata a {}
+
+.commentlist .parent {}
+.commentlist .comment {}
+.commentlist .children {}
+.commentlist .pingback {}
+.commentlist .bypostauthor {}
+.commentlist .comment-author {}
+.commentlist .comment-author-admin {}
+
+.commentlist {}
+.commentlist li {}
+.commentlist li p {}
+.commentlist li ul {}
+.commentlist li ul.children li {}
+.commentlist li ul.children li.alt {}
+.commentlist li ul.children li.byuser {}
+.commentlist li ul.children li.comment {}
+//.commentlist li ul.children li.depth-{id} {}
+.commentlist li ul.children li.bypostauthor {}
+.commentlist li ul.children li.comment-author-admin {}
+
+.comment-reply-link{
+	padding-left:20px;
+	background-image:url('assets/img/reply-btn.png');
+	background-repeat:no-repeat;
+	background-position:0 center;
+	margin-bottom:10px;
+}
+
+.comment{
+	margin:15px 0;
+
+	.comment-content{
+		margin-bottom:10px;
+	}
+	
+	.says{
+		display:none;
+	}
+
+	.fn{
+		font-size:16px;
+		font-weight:800;
+	}
+	.comment-meta{
+		float:left;
+		a{
+			color:$purple;
+		}
+	}
+
+	.reply{
+		border-bottom:1px solid $divider_line;
+		padding-bottom:10px;
+	}
+
+	.odd{
+		margin-left:60px;
+	}
+}
+
+#respond{
+	.comment-form-comment{
+		label{
+
+		}
+
+		#comment{
+			margin-top:10px;
+			width:100%;
+			height:300px;
+		}
+	}
+
+	.form-submit{
+		input[type="submit"]{
+			background-color:transparent !important;
+			color:$orange !important;
+			padding-right:20px !important;
+			background-image:url('assets/img/right-arrow-orange.png') !important;
+			background-repeat: no-repeat !important;
+			background-position: 95% center !important;
+			font-size:16px !important;
+		}
+	}
+}
+
+.comment-column-meta{
+	width:23%;
+	float: left;
+ 	display: inline;
+ 	margin-right:2%;
+}
+
+.comment-column-content{
+	width:73%;
+	float: left;
+ 	display: inline;
+}
+
+.comment-column-content,
+.comment-column-meta{
+	&:after{
+		content:' ';
+		display:table;
+	}
+}
+
+.avatar{
+	display:none;
+}
+
+#cancel-comment-reply {}
+#cancel-comment-reply a {}
+
 
 /* FOOTER Styles
 ================================================== */

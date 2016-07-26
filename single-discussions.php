@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php if (is_user_logged_in()){ ?>
+
 <div id="content">
 	<div class="container">
 	
@@ -10,20 +12,13 @@
 
 			$date = get_the_date('m.d.y');
 
-			$id = get_the_author_meta();
-			//var_dump("User data" . $id);
+			$id = get_the_author_meta('ID');
 
 			$auth_id = get_the_author_meta();
-			//var_dump("Author ID" . $auth_id);
 			
-			$user_info = get_userdata($id);
+			$company = get_the_author_meta('Company Name');
+
 			
-			$company = get_user_meta($user_info, 'company_name', true);
-
-			//var_dump($company);
-
-			$all_meta = get_user_meta($id);
-			//var_dump("Get user meta" . $all_meta);
 
 			
 		?>
@@ -48,14 +43,30 @@
 				<?php the_content(); ?>
 			</div>
 		</div>
-		
+		<div class="comments">
 		<?php comments_template( '', true ); ?>
+		
+		</div>
 		
 	<?php endwhile; ?>
 	</div>
+	
+		<?php get_template_part('partials/quicklinks'); ?>
+
 </div><!-- End of Content -->
 
+<?php } else { 
 
+	$home = get_home_url('/');
+	//$home = 'http://localhost:8888/nphcsn';
+	$login = $home . '/login';
 
-<?php //get_sidebar(); ?>
+	//header('Location:' . $login);
+	wp_redirect($login);
+
+	//auth_redirect();
+	//exit();
+	}
+	?>
+
 <?php get_footer(); ?>

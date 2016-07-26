@@ -59,13 +59,15 @@
 	?>
 
 	<h2 class="page-title-inner"><?php echo $title; ?></h2>
-	
-	<div class="intro-text">
-		<p><?php echo $intro_text; ?></p>
-		<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
+	<div class="row">
+		<div class="seven columns alpha">
+			<div class="intro-text">
+				<p><?php echo $intro_text; ?></p>
+				<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
+			</div>
+		</div>
 	</div>
-	
-</div>
+</div>	
 
 <div class="container mr-filters">
 	
@@ -234,31 +236,14 @@
 	</div> <!-- end row -->
 	
 </div> <!-- end mr-resource-listing -->
-<!-- <div class="container">
-	<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources is provided by The Partnership</p>
-</div> -->
-	 <div class="container quicklinks">
-	 	<h2>Community Quicklinks</h2>
-	 	<div class="row">
-		 	<div class="three columns">
-		 		<a href="#">Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
-	 		</div>
-	 		<div class="three columns">
-		 		<a href="#">Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
-	 		</div>
-	 		<div class="three columns">
-		 		<a href="#">Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
-	 		</div>
-	 		<div class="three columns">
-		 		<a href="#" class=>Start a discussion <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a>
-	 		</div>
-	 	</div>
 	
-	</div>
-<?php } else{ 
+	<!-- Quicklinks container -->
+	<?php get_template_part('partials/quicklinks'); ?>
 
-	//$home = bloginfo('url');
-	$home = 'http://localhost:8888/nphcsn';
+<?php } else { 
+
+	$home = get_home_url('/');
+	//$home = 'http://localhost:8888/nphcsn';
 	$login = $home . '/login';
 
 	//header('Location:' . $login);
@@ -266,7 +251,8 @@
 
 	//auth_redirect();
 	//exit();
-	}?>
+	}
+	?>
 
 
 <?php get_footer(); ?>
