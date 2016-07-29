@@ -593,12 +593,11 @@ endif;
        else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) 
         
         echo '<article class="post-error">
-                <h1 class="404">
-                  Your search did not produce any results!
-                </h1>
-                <h2>
+                <h3 class="404">
+                  Your search did not produce any results!</br>
+                
                   Please use a different search term, or try something more specific.
-                </h2>
+                </h3>
               </article>';
        endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) 
        die();//if this isn't included, you will get funky characters at the end of your query results.
@@ -738,12 +737,11 @@ endif;
        else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) 
         
         echo '<article class="post-error">
-                <h1 class="404">
-                  Your search did not produce any results!
-                </h1>
-                <h2>
+                <h3 class="404">
+                  Your search did not produce any results!</br>
+                
                   Please use a different search term, or try something more specific.
-                </h2>
+                </h3>
               </article>';
        endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) 
        die();//if this isn't included, you will get funky characters at the end of your query results.

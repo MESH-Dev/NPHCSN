@@ -10,48 +10,6 @@
 	</div>
 </div>
 
-<!-- <div class="filters">
-	<div class="container">
-		<div class="twelve columns filter-header">
-			<h3>Filter by TOPIC</h3>
-		</div>
-		<div class="twelve columns filter-row" >
- 
-			<?php 
-			$args = array( 'orderby' => 'name',  'parent' => 0  );
-			$categories = get_categories( $args );
-			foreach ( $categories as $category ) {
-
-				$icon_url = get_field('icon_image', $category);
- 
-				echo '<a href="#" data-filter="'.  $category->slug  . '"><span class="img-cont"><img src="'.$icon_url .'" /></span><br>'  . $category->name . '</a> ';
-			}
-			?>
-			
-		</div> -->
-
-		<!-- <div class="twelve columns filter-row">
-			 
-			<?php 
-			$locations = get_terms( 'location', array(
-			 	'orderby'    => 'name',
-			 	'parent' => 0,
-			) );
-			foreach ( $locations as $location ) {
-				$icon_url = get_field('icon_image', $location);
-				echo '<a href="#" data-filter="'.  $location->slug  . '"><span class="img-cont"><img src="'.$icon_url .'" /></span><br>' . $location->name . '</a> ';
-			}?>
-
-
-		</div> -->
-	<!-- </div>
-</div> -->
-
-<!-- <div class="container resource-listing-header">
-	<div class="six columns"><h3>Resources Showing: <span id="filter">EVERYTHING</span></h3></div>
-	<div class="six columns right"><a href="#" id="reset" data-filter="Everything">RESET Results</a></div>
-</div> -->
-
 <div class="container">
 	<div class="row">
 		<?php 
@@ -190,9 +148,9 @@
 					<div class="one columns alpha the-date"><?php echo $date; ?></div>
 					<?php 
 						$short_title = the_title('', '', false);
-						$shortened_title = substr($short_title, 0, 73);
+						$shortened_title = substr($short_title, 0, 82);
 					?>
-					<div class="eight columns the-title <?php if(strlen($short_title) >= 73){echo "overflow";} ?>">
+					<div class="eight columns the-title <?php if(strlen($short_title) >= 82){echo "overflow";} ?>">
 			 			<a href="<?php the_permalink(); ?>">
 					 		<div class=" orange_text">
 					 			<?php if ($curated == "true") { ?>

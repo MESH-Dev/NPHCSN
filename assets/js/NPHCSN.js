@@ -225,6 +225,7 @@ jQuery(document).ready(function($){
             var data = {
                 action: 'get_discussions',  //Our function from function.php
                 discussionListing: discussionListing, //the return value
+                data: "?query=",
                 //contentType: contentType,
                 query: query //Are we using the search?  
             };
