@@ -6,6 +6,12 @@
 	display:none;
 }
 
+input:-webkit-autofill, 
+textarea:-webkit-autofill, 
+select:-webkit-autofill{
+	background-color:white !important;
+}
+
 /* Header Styles
 ================================================== */
 header{
@@ -689,7 +695,11 @@ header{
 ================================================== */
 .intro-text{
 	//width:50%;
-	margin-bottom:30px;
+	//margin-bottom:30px;
+
+	p{
+		margin:0;
+	}
 	@include breakpoint(tablet){
 		width:100%;
 	}
@@ -1095,8 +1105,49 @@ header{
 
 		}
 
+		input[type="password"]{
+			font-size:16px;
+			padding:.5em .6em;
+		}
+
+		textarea{
+			margin-top:20px;
+			font-size:16px;
+		}
+
+		select{
+			width: 200px; //115%;
+		    background-color: transparent;
+		    background-image: url('assets/img/down-arrow-orange.png');
+		    background-repeat:no-repeat;
+		    background-position: right center;
+		    background-size:10%;
+		    border:none;
+		    border-bottom:2px solid black;
+		    box-shadow: none;
+		    padding: 10px 0.5em;
+		    -webkit-appearance: none;
+		    -moz-appearance: none;
+		    appearance: none;
+		    border-radius: 0px;
+		    padding-bottom: 0;
+		    padding-left: 0;
+		    text-transform: uppercase;
+		    font-size:16px;
+		    padding: .5em .6em;
+
+		    option{
+		    	background:$grey;
+		    	border-radius:0;
+
+		    	&:selected{
+		    		color:$orange;
+		    	}
+		    }
+		}
+
 		.frm_submit{
-			text-align:right;
+			//text-align:right;
 		}
 
 		.frm_primary_label + .frm_opt_container{
@@ -1113,6 +1164,7 @@ header{
 			background-repeat:no-repeat !important;
 			background-position:100%center !important;
 			font-size:16px !important;
+			margin-top:20px;
 
 			&:hover
 			&:active,
@@ -1126,19 +1178,26 @@ header{
 		}
 }
 
+.signup{
+	label{
+		width:150px;
+	}
+}
 
 
 /* Community Login styles
 ================================================== */
 .intro{
 	.intro-text{
-		margin-bottom:60px;
+		//margin-bottom:60px;
 	}
 }
 
 
 .community-login,
 .signup{
+	margin:60px 0;
+
 	[class^="login-"]{
 		label{
 			text-transform:uppercase;
@@ -1153,6 +1212,7 @@ header{
 
 		label{
 			//vertical-align: bottom;
+			width:150px;
 		}
 
 		input[type="text"],
@@ -1169,6 +1229,10 @@ header{
 
 		}
 
+		input[type="password"]{
+			padding:.5em .6em;
+		}
+
 		#c-submit{
 			background:none !important;
 			padding:0 !important;
@@ -1179,6 +1243,7 @@ header{
 			background-repeat:no-repeat !important;
 			background-position:95% center !important;
 			font-size:16px !important;
+			margin-top:20px;
 
 			&:hover
 			&:active,
@@ -1194,6 +1259,10 @@ header{
 		text-transform:uppercase;
 		font-weight:800 !important;
 
+	}
+
+	.author-info{
+		line-height:1.5;
 	}
 
 	.topic{
@@ -1259,6 +1328,7 @@ header{
 }
 
 .more{
+	color:$orange;
 		span{
 			font-weight:800;
 			text-transform:uppercase;
@@ -1303,53 +1373,19 @@ header{
 	}
 }
 
+@media only screen and (max-width:500px){
+	.login-bar{
+		span{
+			display:block;
+			width:100%;
+		}
+	}
+}
+
 /*Comments*/
 /*Comment Output*/
 
 .commentlist .reply {margin-right:30px;}
-.commentlist .reply a {}
-
-.commentlist .alt {}
-.commentlist .odd {}
-.commentlist .even {}
-.commentlist .thread-alt {}
-.commentlist .thread-odd {}
-.commentlist .thread-even {}
-.commentlist li ul.children .alt {}
-.commentlist li ul.children .odd {}
-.commentlist li ul.children .even {}
-
-.commentlist .vcard {}
-.commentlist .vcard cite.fn {}
-.commentlist .vcard span.says {}
-.commentlist .vcard img.photo {}
-.commentlist .vcard img.avatar {}
-.commentlist .vcard cite.fn a.url {}
-
-.commentlist .comment-meta {} 
-.commentlist .comment-meta a {}
-.commentlist .commentmetadata {}
-.commentlist .commentmetadata a {}
-
-.commentlist .parent {}
-.commentlist .comment {}
-.commentlist .children {}
-.commentlist .pingback {}
-.commentlist .bypostauthor {}
-.commentlist .comment-author {}
-.commentlist .comment-author-admin {}
-
-.commentlist {}
-.commentlist li {}
-.commentlist li p {}
-.commentlist li ul {}
-.commentlist li ul.children li {}
-.commentlist li ul.children li.alt {}
-.commentlist li ul.children li.byuser {}
-.commentlist li ul.children li.comment {}
-//.commentlist li ul.children li.depth-{id} {}
-.commentlist li ul.children li.bypostauthor {}
-.commentlist li ul.children li.comment-author-admin {}
 
 .comment-reply-link{
 	padding-left:20px;
@@ -1361,6 +1397,8 @@ header{
 
 .comment{
 	margin:15px 0;
+
+	
 
 	.comment-content{
 		margin-bottom:10px;
@@ -1391,6 +1429,14 @@ header{
 	}
 }
 
+@media only screen and (max-width:500px){
+	.comment{
+		.odd{
+			margin-left:20px;
+		}
+	}
+}
+
 #respond{
 	.comment-form-comment{
 		label{
@@ -1409,6 +1455,7 @@ header{
 			background-color:transparent !important;
 			color:$orange !important;
 			padding-right:20px !important;
+			padding-left:0 !important;
 			background-image:url('assets/img/right-arrow-orange.png') !important;
 			background-repeat: no-repeat !important;
 			background-position: 95% center !important;
@@ -1428,6 +1475,13 @@ header{
 	width:73%;
 	float: left;
  	display: inline;
+ 	//margin-left:2%;
+}
+
+@media only screen and (max-width:500px){
+	.comment-column-content{
+		margin-left:2%;
+	}
 }
 
 .comment-column-content,

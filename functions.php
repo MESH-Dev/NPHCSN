@@ -766,7 +766,7 @@ function mytheme_comment($comment, $args, $depth) {
          <br />
       <?php endif; ?>
             <div class="comment-meta commentmetadata">
-                <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s, %2$s'), get_comment_date(),  get_comment_time()) ?></a>
+                <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s, %2$s'), get_comment_date('m.d.y'),  get_comment_time()) ?></a>
                 <?php edit_comment_link(__('(Edit)'),'  ','') ?>
             </div>
         </div>

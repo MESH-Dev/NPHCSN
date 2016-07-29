@@ -80,7 +80,7 @@
 
 				?>
 		<div class="login-bar">
-			<p>Welcome to The National Partnership Community Area, <?php echo $first_name . ' ' . $last_name ?> <a href="<?php echo home_url('/'); ?>/community-dashboard">Go to Dashboard</a> | <a href="<?php echo wp_logout_url(); ?>">Log Out</a> <?php if(current_user_can('administrator')){?>| <a href="<?php echo home_url('/')?>/wp-admin">Admin</a><?php } ?></p>
+			<p>Welcome to The National Partnership Community Area, <?php echo $first_name . ' ' . $last_name ?> <span class="login-links"><a href="<?php echo home_url('/'); ?>/community-dashboard">Go to Dashboard</a> | <a href="<?php echo wp_logout_url(); ?>">Log Out</a> <?php if(current_user_can('administrator')){?>| <a href="<?php echo home_url('/')?>/wp-admin">Admin</a><?php } ?></span></p>
 		</div>
 		<?php } ?>
 <header>

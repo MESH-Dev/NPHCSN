@@ -17,13 +17,15 @@ Template Name: Login Page
 
 <div class="container intro">
 	<h2 class="page-title-inner"><?php echo get_field('page_title'); ?></h2>
-	<div class="intro-text">
-		<p><?php echo get_field('page_intro_text'); ?></p>
+	<div class="seven columns alpha">
+		<div class="intro-text">
+			<p><?php echo get_field('page_intro_text'); ?></p>
+		</div>
 	</div>
 </div>
 
 <div class="container">
-	<div class="seven columns">
+	<div class="">
 		<div class="community-login">
 			
 			<?php 

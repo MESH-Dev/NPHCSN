@@ -63,7 +63,7 @@ Template Name: Community Dashboard
 <div class="container">
 	<?php //variables
 
-		$date = get_the_date('m.d.y');
+		//$date = get_the_date('m.d.y', $post_id);
 
 		$line_length = '40';
 		$line_length_short = '30';
@@ -91,7 +91,7 @@ Template Name: Community Dashboard
 			      'posts_per_page' => 5,
 			      'post_status' => 'publish',
 			      'orderby' => 'date',
-			      'order' => 'ASC',
+			      'order' => 'DESC',
 			      
 			      );
 
@@ -99,6 +99,7 @@ Template Name: Community Dashboard
 
 				if ($the_query->have_posts()):
 					while ($the_query->have_posts()) : $the_query->the_post();
+					$date = get_the_date('m.d.y');
 					$short_title = the_title('', '', false);
 					$shortened_title = substr($short_title, 0, $line_length);
 			?>
@@ -113,8 +114,8 @@ Template Name: Community Dashboard
 
 			<?php wp_reset_postdata(); endwhile; endif; ?>
 
-			<p class="more"><a href="<?php echo home_url('/') ?>/discussions">View All Dicussions on the DISCUSSION BOARD <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a></p>
-			<p class="more"><a href="<?php echo home_url('/') ?>/start-a-discussion"><span>Start a discussion</span> with other members <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a></p>
+			<p class="more">View All Dicussions on the <a href="<?php echo home_url('/') ?>/discussions"><span>DISCUSSION BOARD</span></a> <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></p>
+			<p class="more"><a href="<?php echo home_url('/') ?>/start-a-discussion"><span>Start a discussion</span></a> with other members <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></p>
 		</div>
 
 		<?php //Member resources loop ?>
@@ -160,6 +161,7 @@ Template Name: Community Dashboard
 					$short_title = the_title('', '', false);
 					$shortened_title = substr($short_title, 0, $line_length_short);
 					$mr_link = get_field('mrf_link', $post->ID);
+					$date = get_the_date('m.d.y');
 
 					$member_topics= wp_get_post_terms($post->ID, 'member_topic');
 
@@ -179,7 +181,7 @@ Template Name: Community Dashboard
 			</div>
 
 			<?php wp_reset_postdata(); endwhile; endif; ?>
-			<p class="more"><a href="<?php echo home_url('/'); ?>/member_resources">See and search our curated COMMUNITY RESOURCES <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></a></p>
+			<p class="more">See and search our curated <a href="<?php echo home_url('/'); ?>/member_resources"><span>COMMUNITY RESOURCES</span></a> <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></p>
 		</div>
 	</div>
 

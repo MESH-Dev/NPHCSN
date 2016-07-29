@@ -37,7 +37,7 @@
 			</div>
 			<div class="post-author row">
 				<div class="two columns alpha label">Posted by:</div>
-				<div class="two columns"><?php the_author(); ?></br> <?php echo $company; ?></div>
+				<div class="two columns author-info"><?php the_author(); ?></br> <?php echo $company; ?></div>
 			</div>
 			<div class="the-content row">
 				<?php the_content(); ?>
