@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="content">
+<div class="container" id="content">
 	
 	<h1>Page Not Found</h1>
 	<p>The page you requested could not be found. Perhaps searching will help.</p>

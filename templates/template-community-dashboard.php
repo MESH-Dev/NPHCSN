@@ -99,22 +99,23 @@ Template Name: Community Dashboard
 
 				if ($the_query->have_posts()):
 					while ($the_query->have_posts()) : $the_query->the_post();
+					$line_length_ld = '50';
 					$date = get_the_date('m.d.y');
 					$short_title = the_title('', '', false);
-					$shortened_title = substr($short_title, 0, $line_length);
+					$shortened_title = substr($short_title, 0, $line_length_ld);
 			?>
 			<div class="row list-item">
 				<div class="one columns alpha">
 					<?php echo $date; ?>
 				</div>
-				<div class="five columns alpha the-title <?php if(strlen($short_title) >= $line_length){echo "overflow";} ?>">
+				<div class="five columns alpha the-title <?php if(strlen($short_title) >= $line_length_ld){echo "overflow";} ?>">
 					<a href="<?php the_permalink() ?>"><?php echo $shortened_title; ?></a>
 				</div>
 			</div>
 
 			<?php wp_reset_postdata(); endwhile; endif; ?>
 
-			<p class="more">View All Dicussions on the <a href="<?php echo home_url('/') ?>/discussions"><span>DISCUSSION BOARD</span></a> <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></p>
+			<p class="more top">View All Dicussions on the <a href="<?php echo home_url('/') ?>/discussions"><span>DISCUSSION BOARD</span></a> <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></p>
 			<p class="more"><a href="<?php echo home_url('/') ?>/start-a-discussion"><span>Start a discussion</span></a> with other members <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></p>
 		</div>
 
@@ -181,7 +182,7 @@ Template Name: Community Dashboard
 			</div>
 
 			<?php wp_reset_postdata(); endwhile; endif; ?>
-			<p class="more">See and search our curated <a href="<?php echo home_url('/'); ?>/member_resources"><span>COMMUNITY RESOURCES</span></a> <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></p>
+			<p class="more top">See and search our curated <a href="<?php echo home_url('/'); ?>/member_resources"><span>COMMUNITY RESOURCES</span></a> <img src="<?php bloginfo('template_directory'); ?>/assets/img/right-arrow-orange.png"></p>
 		</div>
 	</div>
 

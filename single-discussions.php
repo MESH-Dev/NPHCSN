@@ -24,28 +24,41 @@
 		?>
 		
 		<div class="post single-discussion">
-			<h2 class="page-title-inner"><?php the_title(); ?></h2>
+			<div class="row">
+				<div class="eleven columns alpha">
+					<h2 class="page-title-inner"><?php the_title(); ?></h2>
+				</div>
+			</div>
 			<!-- <p class="postinfo">By <?php the_author(); ?> | Categories: <?php the_category(', '); ?> | <?php comments_popup_link(); ?></p> -->
-			<div class="topic row">
-				<div class="two columns alpha label">Topic:</div>
-				<div class="two columns result">Topic 1</div>
-			</div>
-			<div class="date row">
-				<div class="two columns alpha label">Date:</div>
-				<div class="two columns"><?php echo $date ?></div>
+			<div class="d-info">
+				<div class="topic row">
+					<div class="two columns alpha label">Topic:</div>
+					<div class="two columns result">Topic 1</div>
+				</div>
+				<div class="date row">
+					<div class="two columns alpha label">Date:</div>
+					<div class="two columns"><?php echo $date ?></div>
 
-			</div>
-			<div class="post-author row">
-				<div class="two columns alpha label">Posted by:</div>
-				<div class="two columns author-info"><?php the_author(); ?></br> <?php echo $company; ?></div>
+				</div>
+				<div class="post-author row">
+					<div class="two columns alpha label">Posted by:</div>
+					<div class="two columns author-info"><p><?php the_author(); ?></p> <?php if($company != ''){ ?> <p> <?php echo $company; ?> <?php } ?></div>
+				</div>
 			</div>
 			<div class="the-content row">
-				<?php the_content(); ?>
+				<div class="eight columns alpha">
+					<?php the_content(); ?>
+				</div>
 			</div>
+			
 		</div>
-		<div class="comments">
-		<?php comments_template( '', true ); ?>
-		
+		<div class="row">
+			<div class="nine columns alpha">
+				<div class="comments">
+				<?php comments_template( '', true ); ?>
+				
+				</div>
+			</div>
 		</div>
 		
 	<?php endwhile; ?>
