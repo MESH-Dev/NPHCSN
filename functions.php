@@ -781,4 +781,9 @@ function mytheme_comment($comment, $args, $depth) {
 <?php
         }
 
+function topic_func( ) {
+    return "Select A Topic";
+}
+add_shortcode( 'selec_tag', 'topic_func' );
+
 ?>

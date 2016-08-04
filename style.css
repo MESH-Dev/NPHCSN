@@ -2651,19 +2651,24 @@ header .show {
   padding: .5em 0;
 }
 
+/* line 1239, assets/sass/_layout.scss */
+.frm_blank_field input {
+  border: 1px solid red !important;
+}
+
 /* Community Login styles
 ================================================== */
-/* line 1246, assets/sass/_layout.scss */
+/* line 1252, assets/sass/_layout.scss */
 .community-login,
 .signup {
   margin: 60px 0;
 }
-/* line 1250, assets/sass/_layout.scss */
+/* line 1256, assets/sass/_layout.scss */
 .community-login .login-remember,
 .signup .login-remember {
   display: none;
 }
-/* line 1254, assets/sass/_layout.scss */
+/* line 1260, assets/sass/_layout.scss */
 .community-login .login-username,
 .community-login .login-password,
 .signup .login-username,
@@ -2671,31 +2676,31 @@ header .show {
   line-height: 1;
   margin: 0 0 0 0;
 }
-/* line 1260, assets/sass/_layout.scss */
+/* line 1266, assets/sass/_layout.scss */
 .community-login .login-password,
 .signup .login-password {
   margin-bottom: 20px;
 }
-/* line 1262, assets/sass/_layout.scss */
+/* line 1268, assets/sass/_layout.scss */
 .community-login .login-password label,
 .signup .login-password label {
   vertical-align: bottom;
 }
-/* line 1267, assets/sass/_layout.scss */
+/* line 1273, assets/sass/_layout.scss */
 .community-login [class^="login-"] label,
 .signup [class^="login-"] label {
   text-transform: uppercase;
   font-weight: 900;
   width: 150px;
 }
-/* line 1273, assets/sass/_layout.scss */
+/* line 1279, assets/sass/_layout.scss */
 .community-login [class^="login-"] label,
 .community-login [class^="login-"] input,
 .signup [class^="login-"] label,
 .signup [class^="login-"] input {
   display: inline-block;
 }
-/* line 1278, assets/sass/_layout.scss */
+/* line 1284, assets/sass/_layout.scss */
 .community-login [class^="login-"] input[type="text"],
 .community-login [class^="login-"] input[type="password"],
 .signup [class^="login-"] input[type="text"],
@@ -2709,13 +2714,13 @@ header .show {
   font-size: 16px;
   box-shadow: none;
 }
-/* line 1293, assets/sass/_layout.scss */
+/* line 1299, assets/sass/_layout.scss */
 .community-login [class^="login-"] input[type="password"],
 .signup [class^="login-"] input[type="password"] {
   padding: .5em .6em;
   margin-bottom: 0;
 }
-/* line 1300, assets/sass/_layout.scss */
+/* line 1306, assets/sass/_layout.scss */
 .community-login [class^="login-"] #c-submit,
 .signup [class^="login-"] #c-submit {
   background: none !important;
@@ -2729,7 +2734,7 @@ header .show {
   font-size: 16px !important;
   margin-top: 20px;
 }
-/* line 1312, assets/sass/_layout.scss */
+/* line 1318, assets/sass/_layout.scss */
 .community-login [class^="login-"] #c-submit:hover
 .community-login [class^="login-"] #c-submit:active, .community-login [class^="login-"] #c-submit:focus,
 .signup [class^="login-"] #c-submit:hover
@@ -2741,30 +2746,30 @@ header .show {
   opacity: .7;
 }
 
-/* line 1325, assets/sass/_layout.scss */
+/* line 1331, assets/sass/_layout.scss */
 .single-discussion .topic.row,
 .single-discussion .date.row {
   margin-bottom: 15px;
 }
-/* line 1331, assets/sass/_layout.scss */
+/* line 1337, assets/sass/_layout.scss */
 .single-discussion .post-author.row {
   margin-bottom: 0;
 }
-/* line 1334, assets/sass/_layout.scss */
+/* line 1340, assets/sass/_layout.scss */
 .single-discussion .post-author p {
   margin-bottom: 5px;
   line-height: 1;
 }
-/* line 1340, assets/sass/_layout.scss */
+/* line 1346, assets/sass/_layout.scss */
 .single-discussion .d-info {
   margin-bottom: 60px;
 }
-/* line 1343, assets/sass/_layout.scss */
+/* line 1349, assets/sass/_layout.scss */
 .single-discussion .label {
   text-transform: uppercase;
   font-weight: 800 !important;
 }
-/* line 1354, assets/sass/_layout.scss */
+/* line 1360, assets/sass/_layout.scss */
 .single-discussion .topic .result {
   color: #e86125;
   font-weight: 800;
@@ -2773,28 +2778,28 @@ header .show {
 
 /* Community Dashboard
 ================================================== */
-/* line 1366, assets/sass/_layout.scss */
+/* line 1372, assets/sass/_layout.scss */
 .dashboard {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-/* line 1371, assets/sass/_layout.scss */
+/* line 1377, assets/sass/_layout.scss */
 .dashboard .ld .the-title {
   text-transform: none;
 }
-/* line 1376, assets/sass/_layout.scss */
+/* line 1382, assets/sass/_layout.scss */
 .dashboard .page-title-inner {
   margin-bottom: 40px;
   margin-top: 0;
 }
-/* line 1382, assets/sass/_layout.scss */
+/* line 1388, assets/sass/_layout.scss */
 .dashboard .the-title {
   text-transform: uppercase;
   color: #e86125;
   font-weight: 800 !important;
   position: relative;
 }
-/* line 1388, assets/sass/_layout.scss */
+/* line 1394, assets/sass/_layout.scss */
 .dashboard .the-title.overflow:after {
   content: "...";
   background: white;
@@ -2806,51 +2811,51 @@ header .show {
   padding: 0 5px 0 5px;
   height: 100%;
 }
-/* line 1402, assets/sass/_layout.scss */
+/* line 1408, assets/sass/_layout.scss */
 .dashboard .title {
   text-transform: uppercase;
   font-weight: 800;
   font-size: 16px;
   margin-bottom: 20px;
 }
-/* line 1409, assets/sass/_layout.scss */
+/* line 1415, assets/sass/_layout.scss */
 .dashboard .list-item {
   border-bottom: 1px solid #d8d8d8;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-/* line 1416, assets/sass/_layout.scss */
+/* line 1422, assets/sass/_layout.scss */
 .dashboard .more span {
   font-weight: 800;
 }
 
-/* line 1422, assets/sass/_layout.scss */
+/* line 1428, assets/sass/_layout.scss */
 .more {
   color: #e86125;
 }
-/* line 1426, assets/sass/_layout.scss */
+/* line 1432, assets/sass/_layout.scss */
 .more.top {
   margin-top: 15px;
 }
-/* line 1429, assets/sass/_layout.scss */
+/* line 1435, assets/sass/_layout.scss */
 .more span {
   font-weight: 800;
   text-transform: uppercase;
 }
 
-/* line 1437, assets/sass/_layout.scss */
+/* line 1443, assets/sass/_layout.scss */
 .identification {
   color: white;
 }
-/* line 1440, assets/sass/_layout.scss */
+/* line 1446, assets/sass/_layout.scss */
 .identification .the-row {
   margin-bottom: 10px;
 }
-/* line 1443, assets/sass/_layout.scss */
+/* line 1449, assets/sass/_layout.scss */
 .identification .the-row div {
   display: inline-block;
 }
-/* line 1447, assets/sass/_layout.scss */
+/* line 1453, assets/sass/_layout.scss */
 .identification .the-row .label {
   text-transform: uppercase;
   font-weight: 800;
@@ -2859,23 +2864,23 @@ header .show {
 
 /* Login bar
 ================================================== */
-/* line 1461, assets/sass/_layout.scss */
+/* line 1467, assets/sass/_layout.scss */
 .login-bar {
   text-align: right;
   font-size: 11px;
 }
-/* line 1464, assets/sass/_layout.scss */
+/* line 1470, assets/sass/_layout.scss */
 .login-bar p {
   margin: 0;
   padding: 5px 30px 5px 0;
 }
-/* line 1468, assets/sass/_layout.scss */
+/* line 1474, assets/sass/_layout.scss */
 .login-bar a {
   text-transform: uppercase;
 }
 
 @media only screen and (max-width: 500px) {
-  /* line 1475, assets/sass/_layout.scss */
+  /* line 1481, assets/sass/_layout.scss */
   .login-bar span {
     display: block;
     width: 100%;
@@ -2883,12 +2888,12 @@ header .show {
 }
 /*Comments*/
 /*Comment Output*/
-/* line 1485, assets/sass/_layout.scss */
+/* line 1491, assets/sass/_layout.scss */
 .commentlist .reply {
   margin-right: 30px;
 }
 
-/* line 1487, assets/sass/_layout.scss */
+/* line 1493, assets/sass/_layout.scss */
 .comment-reply-link {
   padding-left: 20px;
   background-image: url("assets/img/reply-btn.png");
@@ -2897,61 +2902,61 @@ header .show {
   margin-bottom: 10px;
 }
 
-/* line 1496, assets/sass/_layout.scss */
+/* line 1502, assets/sass/_layout.scss */
 .comments .comments-title {
   border-bottom: 1px solid #d8d8d8;
   padding-bottom: 5px;
 }
 
-/* line 1502, assets/sass/_layout.scss */
+/* line 1508, assets/sass/_layout.scss */
 .comment {
   margin: 15px 0;
   border-bottom: 1px solid #d8d8d8;
 }
-/* line 1507, assets/sass/_layout.scss */
+/* line 1513, assets/sass/_layout.scss */
 .comment .comment-content {
   margin-bottom: 10px;
 }
-/* line 1511, assets/sass/_layout.scss */
+/* line 1517, assets/sass/_layout.scss */
 .comment .says {
   display: none;
 }
-/* line 1515, assets/sass/_layout.scss */
+/* line 1521, assets/sass/_layout.scss */
 .comment .fn {
   font-size: 16px;
   font-weight: 800;
 }
-/* line 1519, assets/sass/_layout.scss */
+/* line 1525, assets/sass/_layout.scss */
 .comment .comment-meta {
   float: left;
 }
-/* line 1521, assets/sass/_layout.scss */
+/* line 1527, assets/sass/_layout.scss */
 .comment .comment-meta a {
   color: #2f1d35;
 }
-/* line 1526, assets/sass/_layout.scss */
+/* line 1532, assets/sass/_layout.scss */
 .comment .reply {
   border-bottom: 1px solid #d8d8d8;
   padding-bottom: 10px;
 }
-/* line 1531, assets/sass/_layout.scss */
+/* line 1537, assets/sass/_layout.scss */
 .comment .odd {
   margin-left: 60px;
 }
 
 @media only screen and (max-width: 500px) {
-  /* line 1538, assets/sass/_layout.scss */
+  /* line 1544, assets/sass/_layout.scss */
   .comment .odd {
     margin-left: 20px;
   }
 }
-/* line 1550, assets/sass/_layout.scss */
+/* line 1556, assets/sass/_layout.scss */
 #respond .comment-form-comment #comment {
   margin-top: 10px;
   width: 100%;
   height: 300px;
 }
-/* line 1558, assets/sass/_layout.scss */
+/* line 1564, assets/sass/_layout.scss */
 #respond .form-submit input[type="submit"] {
   background-color: transparent !important;
   color: #e86125 !important;
@@ -2963,7 +2968,7 @@ header .show {
   font-size: 16px !important;
 }
 
-/* line 1571, assets/sass/_layout.scss */
+/* line 1577, assets/sass/_layout.scss */
 .comment-column-meta {
   width: 20%;
   float: left;
@@ -2971,7 +2976,7 @@ header .show {
   margin-right: 2%;
 }
 
-/* line 1578, assets/sass/_layout.scss */
+/* line 1584, assets/sass/_layout.scss */
 .comment-column-content {
   width: 73%;
   float: left;
@@ -2979,47 +2984,47 @@ header .show {
 }
 
 @media only screen and (max-width: 500px) {
-  /* line 1586, assets/sass/_layout.scss */
+  /* line 1592, assets/sass/_layout.scss */
   .comment-column-content {
     margin-left: 2%;
   }
 }
-/* line 1593, assets/sass/_layout.scss */
+/* line 1599, assets/sass/_layout.scss */
 .comment-column-content:after,
 .comment-column-meta:after {
   content: ' ';
   display: table;
 }
 
-/* line 1599, assets/sass/_layout.scss */
+/* line 1605, assets/sass/_layout.scss */
 .avatar {
   display: none;
 }
 
 /* FOOTER Styles
 ================================================== */
-/* line 1609, assets/sass/_layout.scss */
+/* line 1615, assets/sass/_layout.scss */
 footer {
   font-size: 12px;
   line-height: 17px;
 }
 
-/* line 1614, assets/sass/_layout.scss */
+/* line 1620, assets/sass/_layout.scss */
 .footer-top {
   width: 100%;
   background-color: #2f1d35;
   padding: 30px 0;
 }
-/* line 1622, assets/sass/_layout.scss */
+/* line 1628, assets/sass/_layout.scss */
 .footer-top .footer-links ul {
   margin: 0;
   padding: 0;
 }
-/* line 1625, assets/sass/_layout.scss */
+/* line 1631, assets/sass/_layout.scss */
 .footer-top .footer-links ul li {
   list-style-type: none;
 }
-/* line 1627, assets/sass/_layout.scss */
+/* line 1633, assets/sass/_layout.scss */
 .footer-top .footer-links ul li a {
   font-weight: 900;
   text-transform: uppercase;
@@ -3027,7 +3032,7 @@ footer {
   margin-bottom: 4px;
   display: block;
 }
-/* line 1633, assets/sass/_layout.scss */
+/* line 1639, assets/sass/_layout.scss */
 .footer-top .footer-links ul li a:after {
   content: url("assets/img/right-arrow.png");
   position: relative;
@@ -3035,74 +3040,74 @@ footer {
   left: 15px;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 1627, assets/sass/_layout.scss */
+  /* line 1633, assets/sass/_layout.scss */
   .footer-top .footer-links ul li a {
     margin-bottom: 0px;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 1614, assets/sass/_layout.scss */
+  /* line 1620, assets/sass/_layout.scss */
   .footer-top {
     height: 310px;
   }
 }
 @media only screen and (max-width: 479px) {
-  /* line 1614, assets/sass/_layout.scss */
+  /* line 1620, assets/sass/_layout.scss */
   .footer-top {
     height: 400px;
   }
 }
-/* line 1658, assets/sass/_layout.scss */
+/* line 1664, assets/sass/_layout.scss */
 .footer-top .footer-logos span.logo-title {
   width: 100%;
   display: block;
   color: #e86125;
   margin-bottom: 20px;
 }
-/* line 1664, assets/sass/_layout.scss */
+/* line 1670, assets/sass/_layout.scss */
 .footer-top .footer-logos img {
   display: inline-block;
   padding: 0 40px 0px 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 1664, assets/sass/_layout.scss */
+  /* line 1670, assets/sass/_layout.scss */
   .footer-top .footer-logos img {
     padding: 0 10px 0px 0;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 1664, assets/sass/_layout.scss */
+  /* line 1670, assets/sass/_layout.scss */
   .footer-top .footer-logos img {
     padding: 0 10px 20px 0;
   }
 }
 @media only screen and (max-width: 479px) {
-  /* line 1664, assets/sass/_layout.scss */
+  /* line 1670, assets/sass/_layout.scss */
   .footer-top .footer-logos img {
     padding: 0 10px 20px 0;
   }
 }
 
-/* line 1681, assets/sass/_layout.scss */
+/* line 1687, assets/sass/_layout.scss */
 .footer-bottom {
   width: 100%;
   height: 70px;
   background-color: white;
 }
-/* line 1685, assets/sass/_layout.scss */
+/* line 1691, assets/sass/_layout.scss */
 .footer-bottom .footer-text {
   padding: 20px 0  10px 0;
 }
-/* line 1688, assets/sass/_layout.scss */
+/* line 1694, assets/sass/_layout.scss */
 .footer-bottom .mesh {
   text-align: right;
 }
-/* line 1691, assets/sass/_layout.scss */
+/* line 1697, assets/sass/_layout.scss */
 .footer-bottom .mesh a {
   font-weight: bold;
 }
 
-/* line 1699, assets/sass/_layout.scss */
+/* line 1705, assets/sass/_layout.scss */
 #eb {
   width: 56px;
   float: left;
@@ -3110,7 +3115,7 @@ footer {
   display: inline;
 }
 
-/* line 1706, assets/sass/_layout.scss */
+/* line 1712, assets/sass/_layout.scss */
 #k {
   width: 75px;
   margin-top: 25px;
@@ -3118,7 +3123,7 @@ footer {
   float: left;
 }
 
-/* line 1714, assets/sass/_layout.scss */
+/* line 1720, assets/sass/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;

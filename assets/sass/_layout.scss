@@ -1235,6 +1235,12 @@ header{
 	padding:.5em 0;
 }
 
+.frm_blank_field{
+	 input{
+	 	border:1px solid red !important;
+	 }
+}
+
 /* Community Login styles
 ================================================== */
 .intro{

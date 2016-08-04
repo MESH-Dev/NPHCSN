@@ -448,4 +448,6 @@ $('.d-search-filter form').submit(function(e){
 
 $('input').wrap('<span class="input-active"></span>');
 
+$('select option:eq(0)').text('Select A Topic');
+
 }); //end ready
