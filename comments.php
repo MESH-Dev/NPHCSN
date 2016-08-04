@@ -14,7 +14,7 @@
 ?>
 
 <?php if ( have_comments() ) : ?>
-	<h3>Comments</h3>
+	<h3 class="comments-title">Comments</h3>
 	
 	<?php 
 

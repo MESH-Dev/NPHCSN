@@ -942,7 +942,7 @@ header{
 	margin-bottom:30px;
 	h2{
 		margin-bottom: 20px;
-	    font-size: 18px;
+	    font-size: 16px;
 	    font-weight: bold;
 	    text-transform: uppercase;
 	}
@@ -1144,13 +1144,14 @@ header{
 
 		select{
 			width: 200px; //115%;
+			font-family: 'Lato', sans-serif; 
 		    background-color: transparent;
 		    background-image: url('assets/img/down-arrow-orange.png');
 		    background-repeat:no-repeat;
-		    background-position: right center;
+		    background-position: right 75%;
 		    background-size:10%;
 		    border:none;
-		    //border-bottom:2px solid black;
+		    border-bottom:2px solid black;
 		    box-shadow: none;
 		    padding: 10px 0.5em;
 		    -webkit-appearance: none;
@@ -1161,14 +1162,17 @@ header{
 		    padding-left: 0;
 		    text-transform: uppercase;
 		    font-size:16px;
-		    padding: .5em .6em;
+		    font-weight:800;
+		    padding: .5em .6em 0 .6em;
+		    color:$orange;
 
 		    option{
 		    	background:$grey;
 		    	border-radius:0;
 
-		    	&:selected{
+		    	&:checked{
 		    		color:$orange;
+		    		font-weight:800;
 		    	}
 		    }
 		}
@@ -1205,12 +1209,31 @@ header{
 		}
 }
 
+.start-discussion{
+	.frm_primary_label + .frm_opt_container{
+		display:inline-block;
+		padding-top:.5em;
+	}
+}
+
 .signup{
 	label{
 		width:150px;
 	}
 }
 
+.frm_error_style{
+	font-size:16px;
+	color:red;
+	padding:.5em 0;
+	font-weight:800px;
+}
+
+.frm_error{
+	font-size:16px;
+	color:red;
+	padding:.5em 0;
+}
 
 /* Community Login styles
 ================================================== */
@@ -1219,7 +1242,6 @@ header{
 		//margin-bottom:60px;
 	}
 }
-
 
 .community-login,
 .signup{
@@ -1230,8 +1252,9 @@ header{
 		}
 
 	.login-username,
-		.login-password{
+	.login-password{
 			line-height:1;
+			margin:0 0 0 0;
 		}
 
 	.login-password{
@@ -1470,7 +1493,7 @@ header{
 }
 
 .comments{
-	h3{
+	.comments-title{
 		border-bottom: 1px solid $divider_line;
 		padding-bottom:5px;
 	}
