@@ -4,7 +4,7 @@ Template Name: Signup Page
 */
 ?>
 
-<?php //if (! is_user_logged_in()){ ?>
+<?php if (! is_user_logged_in()){ ?>
 
 <?php get_header(); ?>
 
@@ -35,13 +35,13 @@ Template Name: Signup Page
 
 <?php 
 
-	// } else { 
+	 } else { 
 
-	// $home = get_home_url('/');
-	// $login = $home . '/community-dashboard';
+	 $home = get_home_url('/');
+	 $login = $home . '/community-dashboard';
 
 	
-	// wp_redirect($login);
+	 wp_redirect($login);
 
 	
 	// }

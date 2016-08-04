@@ -446,4 +446,6 @@ $('.d-search-filter form').submit(function(e){
 	
 });
 
+$('input').wrap('<span class="input-active"></span>');
+
 }); //end ready

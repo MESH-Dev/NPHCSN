@@ -523,7 +523,7 @@ header{
 	input[type='search']{
 		background-color:white;
 		border:transparent;
-		//border-bottom:2px solid black;
+		border-bottom:2px solid black;
 		// padding:10px 0;
 		width:250px;
 		//background-image:url('assets/img/search.png');
@@ -533,12 +533,26 @@ header{
 		position:relative;
 
 			&:after{
-				content:' ';
+				content:'';
 				background-color:black;
 				position:absolute;
 				width:100%;
 				height:2px;
 		}
+	}
+}
+
+.signup,
+.login{
+	.input-active{
+		position:relative;
+		&:after{
+			content:'';
+			background-color:black;
+			position:absolute;
+			width:100%;
+			height:2px;
+			}
 	}
 }
 .purple_text{
