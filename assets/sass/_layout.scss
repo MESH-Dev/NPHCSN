@@ -546,18 +546,32 @@ header{
 
 //For animating :focus events on inputs.
 // .signup,
-// .login{
-// 	.input-active{
-// 		position:relative;
-// 		&:after{
-// 			content:'';
-// 			background-color:black;
-// 			position:absolute;
-// 			width:100%;
-// 			height:2px;
-// 			}
-// 	}
-// }
+// .login
+//.search-fliter{
+	// .input-active{
+	// 	position:relative;
+
+	// 	input:focus{
+
+	// 	}
+
+	// 	&:after{
+	// 		content:'';
+	// 		background-color:black;
+	// 		position:absolute;
+	// 		width:100%;
+	// 		height:2px;
+	// 		bottom:0;
+	// 		right:0
+	// 		}
+	// }
+
+	// .input-active input:focus{
+	// 	&:after{
+	// 		height:100%;
+	// 	}
+	// }
+//}
 .purple_text{
 	color: $purple;
 }
@@ -955,6 +969,12 @@ header{
 		font-weight: 900;
 		text-transform: uppercase;
 		color: $orange;
+
+		img{
+			display:inline;
+			vertical-align: -1px;
+			padding-left:10px;
+		}
 	}
 }
 .resource-listing{
@@ -1191,7 +1211,7 @@ header{
 		input[type="submit"]{
 			background:none !important;
 			padding:0 !important;
-			padding-right:25px !important;
+			padding-right:20px !important;
 			color:$orange !important;
 			font-weight:900 !important;
 			background-image:url('assets/img/right-arrow-orange.png') !important;
@@ -1314,12 +1334,12 @@ header{
 		#c-submit{
 			background:none !important;
 			padding:0 !important;
-			padding-right:15px !important;
+			padding-right:20px !important;
 			color:$orange !important;
 			font-weight:900 !important;
 			background-image:url('assets/img/right-arrow-orange.png') !important;
 			background-repeat:no-repeat !important;
-			background-position:95% center !important;
+			background-position:right center !important;
 			font-size:16px !important;
 			margin-top:20px;
 
@@ -1437,6 +1457,12 @@ header{
 
 	color:$orange;
 
+	img{
+		display:inline;
+		vertical-align:-1px;
+		padding-left:10px;
+	}
+
 	&.top{
 		margin-top:15px;
 	}
@@ -1511,12 +1537,25 @@ header{
 		border-bottom: 1px solid $divider_line;
 		padding-bottom:5px;
 	}
+
+	.logged-in-as{
+	display:none;
+	}
+
+	#reply-title{
+		display:none;
+	}
 }
+
+
 
 .comment{
 	margin:15px 0;
 	border-bottom:1px solid $divider_line;
 	
+	.comment{
+		border-bottom:none;
+	}
 
 	.comment-content{
 		margin-bottom:10px;

@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 
-  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-96x96.png" />
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-96x96.png" />
 
 	<!-- Favicons
 	================================================== -->
@@ -34,6 +34,7 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 	<?php wp_head(); ?>
+	<?php if (is_front_page()){ ?>
 	<script type="text/javascript" charset="utf-8" src="edge_includes/edge.5.0.1.min.js"></script>
     <style>
         .edgeLoad-EDGE-151229497 { visibility:hidden; }
@@ -59,7 +60,7 @@
 	    height: "300px"
 	}, {dom: [ ]}, {dom: [ ]});
 	</script>
-
+	<?php } ?>
 	<!--Bugherd script-->
 	<script type='text/javascript'>
 	(function (d, t) {
