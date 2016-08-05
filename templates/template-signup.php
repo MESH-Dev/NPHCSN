@@ -44,7 +44,7 @@ Template Name: Signup Page
 	 wp_redirect($login);
 
 	
-	// }
+	 }
 
 	?>
 

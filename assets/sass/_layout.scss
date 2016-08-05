@@ -532,29 +532,31 @@ header{
 		font-size:16px;
 		position:relative;
 
+			//For animation on focus of 
 			&:after{
-				content:'';
-				background-color:black;
-				position:absolute;
-				width:100%;
-				height:2px;
+				// content:'';
+				// background-color:black;
+				// position:absolute;
+				// width:100%;
+				// height:2px;
 		}
 	}
 }
 
-.signup,
-.login{
-	.input-active{
-		position:relative;
-		&:after{
-			content:'';
-			background-color:black;
-			position:absolute;
-			width:100%;
-			height:2px;
-			}
-	}
-}
+//For animating :focus events on inputs.
+// .signup,
+// .login{
+// 	.input-active{
+// 		position:relative;
+// 		&:after{
+// 			content:'';
+// 			background-color:black;
+// 			position:absolute;
+// 			width:100%;
+// 			height:2px;
+// 			}
+// 	}
+// }
 .purple_text{
 	color: $purple;
 }
@@ -1134,7 +1136,7 @@ header{
 
 		input[type="password"]{
 			font-size:16px;
-			padding:.5em .6em;
+			padding:.5em 0;
 		}
 
 		textarea{
@@ -1222,6 +1224,10 @@ header{
 	}
 }
 
+.frm_hidden{
+	display:none;
+}
+
 .frm_error_style{
 	font-size:16px;
 	color:red;
@@ -1236,7 +1242,8 @@ header{
 }
 
 .frm_blank_field{
-	 input{
+	 input,
+	 textarea{
 	 	border:1px solid red !important;
 	 }
 }
@@ -1297,7 +1304,7 @@ header{
 		}
 
 		input[type="password"]{
-			padding:.5em .6em;
+			padding:.5em 0;
 			margin-bottom:0;
 		}
 
