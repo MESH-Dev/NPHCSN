@@ -36,7 +36,7 @@
         'echo'              => true     // boolean, default is true
 );
 
-	wp_list_comments($args); ?>
+	wp_list_comments($args);  ?>
 
 <?php endif; ?>
 
