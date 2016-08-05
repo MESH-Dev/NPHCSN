@@ -158,7 +158,7 @@ function my_project_updated_send_email( $post_id ) {
     add_user_meta($post_id, 'job_title', $user_job, false  );
 
     // Send email to admin.
-    wp_mail( 'jschrag@essentialhospitals.org', $subject, $message ); //hard code or pull janelle
+    wp_mail( 'shaun@meshfresh.com', $subject, $message ); //hard code or pull janelle
     }
 }
 add_action( 'save_post', 'my_project_updated_send_email' );
