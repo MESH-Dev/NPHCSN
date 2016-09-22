@@ -128,7 +128,7 @@ function do_output_buffer() {
        ob_start();
 }
 
-function my_project_updated_send_email( $post_id ) {
+function my_project_updated_send_email( $post_id, $update ) {
 
     $post_type = get_post_type($post_id);
 
@@ -141,7 +141,7 @@ function my_project_updated_send_email( $post_id ) {
     //is the post type a discussion post?
     if ($post_type == 'discussions'){//Then do this stuff
     // If this is just a revision, don't send the email.
-    if ( wp_is_post_revision( $post_id ) && $post->post_date != $post->post_modified)
+    if ( wp_is_post_revision( $post_id ) )
         return;
 
     $post_title = get_the_title( $post_id );
@@ -161,7 +161,7 @@ function my_project_updated_send_email( $post_id ) {
     wp_mail( 'shaun@meshfresh.com', $subject, $message ); //hard code or pull janelle
     }
 }
-add_action( 'save_post', 'my_project_updated_send_email' );
+add_action( 'save_post', 'my_project_updated_send_email', 10, 3 );
 
 //Redirect users to login screen when not logged in
 
