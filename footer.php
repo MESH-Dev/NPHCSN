@@ -54,7 +54,7 @@
 
 </footer>
 
-<script src="<?php get_theme_directory_uri ?>/assets/js/NPHCSN.js"></script>
+<!--<script src="<?php get_theme_directory_uri ?>/assets/js/NPHCSN.js"></script>-->
 
 <?php wp_footer(); ?>
 <script>

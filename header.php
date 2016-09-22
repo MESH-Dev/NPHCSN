@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 
-  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-96x96.png" />
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-96x96.png" />
 
 	<!-- Favicons
 	================================================== -->
@@ -34,6 +34,7 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 	<?php wp_head(); ?>
+	<?php if (is_front_page()){ ?>
 	<script type="text/javascript" charset="utf-8" src="edge_includes/edge.5.0.1.min.js"></script>
     <style>
         .edgeLoad-EDGE-151229497 { visibility:hidden; }
@@ -59,14 +60,43 @@
 	    height: "300px"
 	}, {dom: [ ]}, {dom: [ ]});
 	</script>
-
+	<?php } ?>
+	<!--Bugherd script-->
+	<script type='text/javascript'>
+	(function (d, t) {
+	  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+	  bh.type = 'text/javascript';
+	  bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=2nbawvhlkvbpgkn46yjx4q';
+	  s.parentNode.insertBefore(bh, s);
+	  })(document, 'script');
+	</script>
 </head>
 
 <body>
 
-<header>
-	<div class="container">
+<?php 
 
+			
+
+			if (is_user_logged_in()){ 
+
+				$id = get_current_user_id();
+				//var_dump($id);
+				$user_info = get_userdata($id);
+				$first_name = $user_info->first_name;
+				$last_name = $user_info->last_name;
+				$job_title = $user_info->job_title;
+				$company = $user_info->company_name;
+
+				?>
+		<div class="login-bar">
+			<p>Welcome to The National Partnership Community Area, <?php echo $first_name . ' ' . $last_name ?> <span class="login-links"><a href="<?php echo home_url('/'); ?>/community-dashboard">Go to Dashboard</a> | <a href="<?php echo wp_logout_url(); ?>">Log Out</a> <?php if(current_user_can('administrator')){?>| <a href="<?php echo home_url('/')?>/wp-admin">Admin</a><?php } ?></span></p>
+		</div>
+		<?php } ?>
+<header>
+	
+	<div class="container">
+		
 		<div class="five columns logo">
 			<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/img/new/NPHCSN_logo_Hi.png" alt="The National Partnership for the Health Care Safety Net"></a>
 		</div>
