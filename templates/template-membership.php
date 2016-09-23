@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name:  Start a discussion
+Template Name:  Membership Application Form
 */
 ?>
 <?php get_header(); ?>
@@ -26,13 +26,15 @@ Template Name:  Start a discussion
 
 <div class="container">
 	<div class="eleven columns alpha">
-		<div class="start-discussion">
-			<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 6, 'title' => false, 'description' => false ) ); ?>
+
+		<div class="membership-form">
+			<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 7, 'title' => false, 'description' => false ) ); ?>
 		</div>
+
 	</div>
 </div>
 
-<?php get_template_part('partials/quicklinks'); ?>
+<?php //get_template_part('partials/quicklinks'); ?>
 
 <?php } else { 
 
