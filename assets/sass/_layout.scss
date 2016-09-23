@@ -35,14 +35,15 @@ header{
 				text-transform: uppercase;
 				float: left;
 				display: inline-block;
-				width: 145px;
-				padding: 15px 20px 0 0;
+				width: 122px;
+				padding: 15px 15px 0 0;
 				font-weight: 900;
 
 				font-size: 14px; line-height: 18px;
 				@include breakpoint(smallscreen){
-					width: 110px;
-					padding-right: 14px;
+					width: 103px;
+					padding-right: 6px;
+					padding-top:0;
 				}
 
 				@include breakpoint(landscape){
@@ -59,7 +60,8 @@ header{
 					text-align: left;
 					padding-top: 14px;
 					@include breakpoint(smallscreen){
-						width: 120px;
+						width: 100px;
+						padding-top:0;
 					}
 					@include breakpoint(landscape){
 						width: 110px;
@@ -79,6 +81,7 @@ header{
 					height: 40px;
 					@include breakpoint(smallscreen){
 						width: 75px;padding-right: 0px;
+						padding-top:0;
 					}
 					@include breakpoint(landscape){
 						width: 75px;padding-right: 0px;
@@ -739,6 +742,7 @@ header{
 
 	p{
 		margin:0;
+		// max-width:60%;
 	}
 	@include breakpoint(tablet){
 		width:100%;
@@ -1117,7 +1121,8 @@ header{
 ================================================== */
 
 .signup,
-.start-discussion{
+.start-discussion,
+.membership-form{
 	margin:60px 0;
 
 		div[id^="frm_field_"]{
@@ -1143,7 +1148,8 @@ header{
 
 		input[type="text"],
 		input[type="password"],
-		input[type="email"]{
+		input[type="email"],
+		input[type='tel']{
 			background:none;
 			border:none;
 			border-bottom:2px solid black;
@@ -1227,21 +1233,84 @@ header{
 			}
 		}
 
+		.address{
+			label{
+				vertical-align: top;
+				padding-top: 21px;
+			}
+			.address-fields{
+				display:inline-block;
+			}
+
+		}
+		
+
+		.big-text{
+			label{
+				display:block
+			}
+			textarea{
+				width:100%;
+			}
+		}
+
+		.inline-field{
+			display:inline;
+			vertical-align: top;
+			padding-right:20px;
+		}
+
 		.frm_ajax_loading{
 			display:none;
 		}
 }
 
+
+@media only screen and (max-width:768px){
+	.signup,
+	.start-discussion,
+	.membership-form{
+		input,
+		label{
+			display:block;
+		}
+
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type='tel']{
+			width:300px;
+		}
+
+		.addres{
+			label{
+				vertical-align: top;
+				padding-top: 21px;
+			}
+			.address-fields{
+				display:block;
+			}
+
+		}
+	}
+}
 .start-discussion{
 	.frm_primary_label + .frm_opt_container{
 		display:inline-block;
 		padding-top:.5em;
+		vertical-align: bottom;
 	}
 }
 
 .signup{
 	label{
 		width:150px;
+	}
+}
+
+.membership-form{
+	label{
+		width:200px;
 	}
 }
 
@@ -1267,6 +1336,11 @@ header{
 	 textarea{
 	 	border:1px solid red !important;
 	 }
+}
+
+.frm_section_heading h3{
+	margin:20px 0 10px 0;
+	color:$orange
 }
 
 /* Community Login styles
