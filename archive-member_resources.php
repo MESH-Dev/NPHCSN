@@ -21,7 +21,7 @@
 		<div class="seven columns alpha">
 			<div class="intro-text">
 				<p><?php echo $intro_text; ?></p>
-				<p>Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources was produced by The National Partnership</p>
+				<p class="note">Note: <img src="<?php bloginfo('template_directory'); ?>/assets/img/curated.png"> indicates that the resources was produced by The National Partnership</p>
 			</div>
 		</div>
 	</div>

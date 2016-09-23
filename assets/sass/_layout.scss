@@ -744,6 +744,10 @@ header{
 		margin:0;
 		// max-width:60%;
 	}
+
+	.note{
+		margin-top:20px;
+	}
 	@include breakpoint(tablet){
 		width:100%;
 	}
