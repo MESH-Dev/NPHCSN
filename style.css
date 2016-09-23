@@ -2657,14 +2657,15 @@ header .show {
 .start-discussion .big-text label,
 .membership-form .big-text label {
   display: block;
+  width: auto;
 }
-/* line 1256, assets/sass/_layout.scss */
+/* line 1257, assets/sass/_layout.scss */
 .signup .big-text textarea,
 .start-discussion .big-text textarea,
 .membership-form .big-text textarea {
   width: 100%;
 }
-/* line 1261, assets/sass/_layout.scss */
+/* line 1262, assets/sass/_layout.scss */
 .signup .inline-field,
 .start-discussion .inline-field,
 .membership-form .inline-field {
@@ -2672,7 +2673,7 @@ header .show {
   vertical-align: top;
   padding-right: 20px;
 }
-/* line 1267, assets/sass/_layout.scss */
+/* line 1268, assets/sass/_layout.scss */
 .signup .frm_ajax_loading,
 .start-discussion .frm_ajax_loading,
 .membership-form .frm_ajax_loading {
@@ -2680,7 +2681,7 @@ header .show {
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 1277, assets/sass/_layout.scss */
+  /* line 1278, assets/sass/_layout.scss */
   .signup input,
   .signup label,
   .start-discussion input,
@@ -2689,7 +2690,7 @@ header .show {
   .membership-form label {
     display: block;
   }
-  /* line 1282, assets/sass/_layout.scss */
+  /* line 1283, assets/sass/_layout.scss */
   .signup input[type="text"],
   .signup input[type="password"],
   .signup input[type="email"],
@@ -2704,43 +2705,43 @@ header .show {
   .membership-form input[type='tel'] {
     width: 300px;
   }
-  /* line 1290, assets/sass/_layout.scss */
+  /* line 1291, assets/sass/_layout.scss */
   .signup .addres label,
   .start-discussion .addres label,
   .membership-form .addres label {
     vertical-align: top;
     padding-top: 21px;
   }
-  /* line 1294, assets/sass/_layout.scss */
+  /* line 1295, assets/sass/_layout.scss */
   .signup .addres .address-fields,
   .start-discussion .addres .address-fields,
   .membership-form .addres .address-fields {
     display: block;
   }
 }
-/* line 1302, assets/sass/_layout.scss */
+/* line 1303, assets/sass/_layout.scss */
 .start-discussion .frm_primary_label + .frm_opt_container {
   display: inline-block;
   padding-top: .5em;
   vertical-align: bottom;
 }
 
-/* line 1310, assets/sass/_layout.scss */
+/* line 1311, assets/sass/_layout.scss */
 .signup label {
   width: 150px;
 }
 
-/* line 1316, assets/sass/_layout.scss */
+/* line 1317, assets/sass/_layout.scss */
 .membership-form label {
   width: 200px;
 }
 
-/* line 1321, assets/sass/_layout.scss */
+/* line 1322, assets/sass/_layout.scss */
 .frm_hidden {
   display: none;
 }
 
-/* line 1325, assets/sass/_layout.scss */
+/* line 1326, assets/sass/_layout.scss */
 .frm_error_style {
   font-size: 16px;
   color: red;
@@ -2748,20 +2749,20 @@ header .show {
   font-weight: 800px;
 }
 
-/* line 1332, assets/sass/_layout.scss */
+/* line 1333, assets/sass/_layout.scss */
 .frm_error {
   font-size: 16px;
   color: red;
   padding: .5em 0;
 }
 
-/* line 1339, assets/sass/_layout.scss */
+/* line 1340, assets/sass/_layout.scss */
 .frm_blank_field input,
 .frm_blank_field textarea {
   border: 1px solid red !important;
 }
 
-/* line 1345, assets/sass/_layout.scss */
+/* line 1346, assets/sass/_layout.scss */
 .frm_section_heading h3 {
   margin: 20px 0 10px 0;
   color: #e86125;
@@ -2769,17 +2770,17 @@ header .show {
 
 /* Community Login styles
 ================================================== */
-/* line 1358, assets/sass/_layout.scss */
+/* line 1359, assets/sass/_layout.scss */
 .community-login,
 .signup {
   margin: 60px 0;
 }
-/* line 1362, assets/sass/_layout.scss */
+/* line 1363, assets/sass/_layout.scss */
 .community-login .login-remember,
 .signup .login-remember {
   display: none;
 }
-/* line 1366, assets/sass/_layout.scss */
+/* line 1367, assets/sass/_layout.scss */
 .community-login .login-username,
 .community-login .login-password,
 .signup .login-username,
@@ -2787,31 +2788,31 @@ header .show {
   line-height: 1;
   margin: 0 0 0 0;
 }
-/* line 1372, assets/sass/_layout.scss */
+/* line 1373, assets/sass/_layout.scss */
 .community-login .login-password,
 .signup .login-password {
   margin-bottom: 20px;
 }
-/* line 1374, assets/sass/_layout.scss */
+/* line 1375, assets/sass/_layout.scss */
 .community-login .login-password label,
 .signup .login-password label {
   vertical-align: bottom;
 }
-/* line 1379, assets/sass/_layout.scss */
+/* line 1380, assets/sass/_layout.scss */
 .community-login [class^="login-"] label,
 .signup [class^="login-"] label {
   text-transform: uppercase;
   font-weight: 900;
   width: 150px;
 }
-/* line 1385, assets/sass/_layout.scss */
+/* line 1386, assets/sass/_layout.scss */
 .community-login [class^="login-"] label,
 .community-login [class^="login-"] input,
 .signup [class^="login-"] label,
 .signup [class^="login-"] input {
   display: inline-block;
 }
-/* line 1390, assets/sass/_layout.scss */
+/* line 1391, assets/sass/_layout.scss */
 .community-login [class^="login-"] input[type="text"],
 .community-login [class^="login-"] input[type="password"],
 .signup [class^="login-"] input[type="text"],
@@ -2825,13 +2826,13 @@ header .show {
   font-size: 16px;
   box-shadow: none;
 }
-/* line 1405, assets/sass/_layout.scss */
+/* line 1406, assets/sass/_layout.scss */
 .community-login [class^="login-"] input[type="password"],
 .signup [class^="login-"] input[type="password"] {
   padding: .5em 0;
   margin-bottom: 0;
 }
-/* line 1412, assets/sass/_layout.scss */
+/* line 1413, assets/sass/_layout.scss */
 .community-login [class^="login-"] #c-submit,
 .signup [class^="login-"] #c-submit {
   background: none !important;
@@ -2845,7 +2846,7 @@ header .show {
   font-size: 16px !important;
   margin-top: 20px;
 }
-/* line 1424, assets/sass/_layout.scss */
+/* line 1425, assets/sass/_layout.scss */
 .community-login [class^="login-"] #c-submit:hover
 .community-login [class^="login-"] #c-submit:active, .community-login [class^="login-"] #c-submit:focus,
 .signup [class^="login-"] #c-submit:hover
@@ -2857,30 +2858,30 @@ header .show {
   opacity: .7;
 }
 
-/* line 1437, assets/sass/_layout.scss */
+/* line 1438, assets/sass/_layout.scss */
 .single-discussion .topic.row,
 .single-discussion .date.row {
   margin-bottom: 15px;
 }
-/* line 1443, assets/sass/_layout.scss */
+/* line 1444, assets/sass/_layout.scss */
 .single-discussion .post-author.row {
   margin-bottom: 0;
 }
-/* line 1446, assets/sass/_layout.scss */
+/* line 1447, assets/sass/_layout.scss */
 .single-discussion .post-author p {
   margin-bottom: 5px;
   line-height: 1;
 }
-/* line 1452, assets/sass/_layout.scss */
+/* line 1453, assets/sass/_layout.scss */
 .single-discussion .d-info {
   margin-bottom: 60px;
 }
-/* line 1455, assets/sass/_layout.scss */
+/* line 1456, assets/sass/_layout.scss */
 .single-discussion .label {
   text-transform: uppercase;
   font-weight: 800 !important;
 }
-/* line 1466, assets/sass/_layout.scss */
+/* line 1467, assets/sass/_layout.scss */
 .single-discussion .topic .result {
   color: #e86125;
   font-weight: 800;
@@ -2889,28 +2890,28 @@ header .show {
 
 /* Community Dashboard
 ================================================== */
-/* line 1478, assets/sass/_layout.scss */
+/* line 1479, assets/sass/_layout.scss */
 .dashboard {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-/* line 1483, assets/sass/_layout.scss */
+/* line 1484, assets/sass/_layout.scss */
 .dashboard .ld .the-title {
   text-transform: none;
 }
-/* line 1488, assets/sass/_layout.scss */
+/* line 1489, assets/sass/_layout.scss */
 .dashboard .page-title-inner {
   margin-bottom: 40px;
   margin-top: 0;
 }
-/* line 1494, assets/sass/_layout.scss */
+/* line 1495, assets/sass/_layout.scss */
 .dashboard .the-title {
   text-transform: uppercase;
   color: #e86125;
   font-weight: 800 !important;
   position: relative;
 }
-/* line 1500, assets/sass/_layout.scss */
+/* line 1501, assets/sass/_layout.scss */
 .dashboard .the-title.overflow:after {
   content: "...";
   background: white;
@@ -2922,57 +2923,57 @@ header .show {
   padding: 0 5px 0 5px;
   height: 100%;
 }
-/* line 1514, assets/sass/_layout.scss */
+/* line 1515, assets/sass/_layout.scss */
 .dashboard .title {
   text-transform: uppercase;
   font-weight: 800;
   font-size: 16px;
   margin-bottom: 20px;
 }
-/* line 1521, assets/sass/_layout.scss */
+/* line 1522, assets/sass/_layout.scss */
 .dashboard .list-item {
   border-bottom: 1px solid #d8d8d8;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-/* line 1528, assets/sass/_layout.scss */
+/* line 1529, assets/sass/_layout.scss */
 .dashboard .more span {
   font-weight: 800;
 }
 
-/* line 1534, assets/sass/_layout.scss */
+/* line 1535, assets/sass/_layout.scss */
 .more {
   color: #e86125;
 }
-/* line 1538, assets/sass/_layout.scss */
+/* line 1539, assets/sass/_layout.scss */
 .more img {
   display: inline;
   vertical-align: -1px;
   padding-left: 10px;
 }
-/* line 1544, assets/sass/_layout.scss */
+/* line 1545, assets/sass/_layout.scss */
 .more.top {
   margin-top: 15px;
 }
-/* line 1547, assets/sass/_layout.scss */
+/* line 1548, assets/sass/_layout.scss */
 .more span {
   font-weight: 800;
   text-transform: uppercase;
 }
 
-/* line 1555, assets/sass/_layout.scss */
+/* line 1556, assets/sass/_layout.scss */
 .identification {
   color: white;
 }
-/* line 1558, assets/sass/_layout.scss */
+/* line 1559, assets/sass/_layout.scss */
 .identification .the-row {
   margin-bottom: 10px;
 }
-/* line 1561, assets/sass/_layout.scss */
+/* line 1562, assets/sass/_layout.scss */
 .identification .the-row div {
   display: inline-block;
 }
-/* line 1565, assets/sass/_layout.scss */
+/* line 1566, assets/sass/_layout.scss */
 .identification .the-row .label {
   text-transform: uppercase;
   font-weight: 800;
@@ -2981,23 +2982,23 @@ header .show {
 
 /* Login bar
 ================================================== */
-/* line 1579, assets/sass/_layout.scss */
+/* line 1580, assets/sass/_layout.scss */
 .login-bar {
   text-align: right;
   font-size: 11px;
 }
-/* line 1582, assets/sass/_layout.scss */
+/* line 1583, assets/sass/_layout.scss */
 .login-bar p {
   margin: 0;
   padding: 5px 30px 5px 0;
 }
-/* line 1586, assets/sass/_layout.scss */
+/* line 1587, assets/sass/_layout.scss */
 .login-bar a {
   text-transform: uppercase;
 }
 
 @media only screen and (max-width: 500px) {
-  /* line 1593, assets/sass/_layout.scss */
+  /* line 1594, assets/sass/_layout.scss */
   .login-bar span {
     display: block;
     width: 100%;
@@ -3005,12 +3006,12 @@ header .show {
 }
 /*Comments*/
 /*Comment Output*/
-/* line 1603, assets/sass/_layout.scss */
+/* line 1604, assets/sass/_layout.scss */
 .commentlist .reply {
   margin-right: 30px;
 }
 
-/* line 1605, assets/sass/_layout.scss */
+/* line 1606, assets/sass/_layout.scss */
 .comment-reply-link {
   padding-left: 20px;
   background-image: url("assets/img/reply-btn.png");
@@ -3019,73 +3020,73 @@ header .show {
   margin-bottom: 10px;
 }
 
-/* line 1614, assets/sass/_layout.scss */
+/* line 1615, assets/sass/_layout.scss */
 .comments .comments-title {
   border-bottom: 1px solid #d8d8d8;
   padding-bottom: 5px;
 }
-/* line 1619, assets/sass/_layout.scss */
+/* line 1620, assets/sass/_layout.scss */
 .comments .logged-in-as {
   display: none;
 }
-/* line 1623, assets/sass/_layout.scss */
+/* line 1624, assets/sass/_layout.scss */
 .comments #reply-title {
   display: none;
 }
 
-/* line 1630, assets/sass/_layout.scss */
+/* line 1631, assets/sass/_layout.scss */
 .comment {
   margin: 15px 0;
   border-bottom: 1px solid #d8d8d8;
 }
-/* line 1634, assets/sass/_layout.scss */
+/* line 1635, assets/sass/_layout.scss */
 .comment .comment {
   border-bottom: none;
 }
-/* line 1638, assets/sass/_layout.scss */
+/* line 1639, assets/sass/_layout.scss */
 .comment .comment-content {
   margin-bottom: 10px;
 }
-/* line 1642, assets/sass/_layout.scss */
+/* line 1643, assets/sass/_layout.scss */
 .comment .says {
   display: none;
 }
-/* line 1646, assets/sass/_layout.scss */
+/* line 1647, assets/sass/_layout.scss */
 .comment .fn {
   font-size: 16px;
   font-weight: 800;
 }
-/* line 1650, assets/sass/_layout.scss */
+/* line 1651, assets/sass/_layout.scss */
 .comment .comment-meta {
   float: left;
 }
-/* line 1652, assets/sass/_layout.scss */
+/* line 1653, assets/sass/_layout.scss */
 .comment .comment-meta a {
   color: #2f1d35;
 }
-/* line 1657, assets/sass/_layout.scss */
+/* line 1658, assets/sass/_layout.scss */
 .comment .reply {
   border-bottom: 1px solid #d8d8d8;
   padding-bottom: 10px;
 }
-/* line 1662, assets/sass/_layout.scss */
+/* line 1663, assets/sass/_layout.scss */
 .comment .odd {
   margin-left: 60px;
 }
 
 @media only screen and (max-width: 500px) {
-  /* line 1669, assets/sass/_layout.scss */
+  /* line 1670, assets/sass/_layout.scss */
   .comment .odd {
     margin-left: 20px;
   }
 }
-/* line 1681, assets/sass/_layout.scss */
+/* line 1682, assets/sass/_layout.scss */
 #respond .comment-form-comment #comment {
   margin-top: 10px;
   width: 100%;
   height: 300px;
 }
-/* line 1689, assets/sass/_layout.scss */
+/* line 1690, assets/sass/_layout.scss */
 #respond .form-submit input[type="submit"] {
   background-color: transparent !important;
   color: #e86125 !important;
@@ -3097,7 +3098,7 @@ header .show {
   font-size: 16px !important;
 }
 
-/* line 1702, assets/sass/_layout.scss */
+/* line 1703, assets/sass/_layout.scss */
 .comment-column-meta {
   width: 20%;
   float: left;
@@ -3105,7 +3106,7 @@ header .show {
   margin-right: 2%;
 }
 
-/* line 1709, assets/sass/_layout.scss */
+/* line 1710, assets/sass/_layout.scss */
 .comment-column-content {
   width: 73%;
   float: left;
@@ -3113,47 +3114,47 @@ header .show {
 }
 
 @media only screen and (max-width: 500px) {
-  /* line 1717, assets/sass/_layout.scss */
+  /* line 1718, assets/sass/_layout.scss */
   .comment-column-content {
     margin-left: 2%;
   }
 }
-/* line 1724, assets/sass/_layout.scss */
+/* line 1725, assets/sass/_layout.scss */
 .comment-column-content:after,
 .comment-column-meta:after {
   content: ' ';
   display: table;
 }
 
-/* line 1730, assets/sass/_layout.scss */
+/* line 1731, assets/sass/_layout.scss */
 .avatar {
   display: none;
 }
 
 /* FOOTER Styles
 ================================================== */
-/* line 1740, assets/sass/_layout.scss */
+/* line 1741, assets/sass/_layout.scss */
 footer {
   font-size: 12px;
   line-height: 17px;
 }
 
-/* line 1745, assets/sass/_layout.scss */
+/* line 1746, assets/sass/_layout.scss */
 .footer-top {
   width: 100%;
   background-color: #2f1d35;
   padding: 30px 0;
 }
-/* line 1753, assets/sass/_layout.scss */
+/* line 1754, assets/sass/_layout.scss */
 .footer-top .footer-links ul {
   margin: 0;
   padding: 0;
 }
-/* line 1756, assets/sass/_layout.scss */
+/* line 1757, assets/sass/_layout.scss */
 .footer-top .footer-links ul li {
   list-style-type: none;
 }
-/* line 1758, assets/sass/_layout.scss */
+/* line 1759, assets/sass/_layout.scss */
 .footer-top .footer-links ul li a {
   font-weight: 900;
   text-transform: uppercase;
@@ -3161,7 +3162,7 @@ footer {
   margin-bottom: 4px;
   display: block;
 }
-/* line 1764, assets/sass/_layout.scss */
+/* line 1765, assets/sass/_layout.scss */
 .footer-top .footer-links ul li a:after {
   content: url("assets/img/right-arrow.png");
   position: relative;
@@ -3169,74 +3170,74 @@ footer {
   left: 15px;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 1758, assets/sass/_layout.scss */
+  /* line 1759, assets/sass/_layout.scss */
   .footer-top .footer-links ul li a {
     margin-bottom: 0px;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 1745, assets/sass/_layout.scss */
+  /* line 1746, assets/sass/_layout.scss */
   .footer-top {
     height: 310px;
   }
 }
 @media only screen and (max-width: 479px) {
-  /* line 1745, assets/sass/_layout.scss */
+  /* line 1746, assets/sass/_layout.scss */
   .footer-top {
     height: 400px;
   }
 }
-/* line 1789, assets/sass/_layout.scss */
+/* line 1790, assets/sass/_layout.scss */
 .footer-top .footer-logos span.logo-title {
   width: 100%;
   display: block;
   color: #e86125;
   margin-bottom: 20px;
 }
-/* line 1795, assets/sass/_layout.scss */
+/* line 1796, assets/sass/_layout.scss */
 .footer-top .footer-logos img {
   display: inline-block;
   padding: 0 40px 0px 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 1795, assets/sass/_layout.scss */
+  /* line 1796, assets/sass/_layout.scss */
   .footer-top .footer-logos img {
     padding: 0 10px 0px 0;
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 1795, assets/sass/_layout.scss */
+  /* line 1796, assets/sass/_layout.scss */
   .footer-top .footer-logos img {
     padding: 0 10px 20px 0;
   }
 }
 @media only screen and (max-width: 479px) {
-  /* line 1795, assets/sass/_layout.scss */
+  /* line 1796, assets/sass/_layout.scss */
   .footer-top .footer-logos img {
     padding: 0 10px 20px 0;
   }
 }
 
-/* line 1812, assets/sass/_layout.scss */
+/* line 1813, assets/sass/_layout.scss */
 .footer-bottom {
   width: 100%;
   height: 70px;
   background-color: white;
 }
-/* line 1816, assets/sass/_layout.scss */
+/* line 1817, assets/sass/_layout.scss */
 .footer-bottom .footer-text {
   padding: 20px 0  10px 0;
 }
-/* line 1819, assets/sass/_layout.scss */
+/* line 1820, assets/sass/_layout.scss */
 .footer-bottom .mesh {
   text-align: right;
 }
-/* line 1822, assets/sass/_layout.scss */
+/* line 1823, assets/sass/_layout.scss */
 .footer-bottom .mesh a {
   font-weight: bold;
 }
 
-/* line 1830, assets/sass/_layout.scss */
+/* line 1831, assets/sass/_layout.scss */
 #eb {
   width: 56px;
   float: left;
@@ -3244,7 +3245,7 @@ footer {
   display: inline;
 }
 
-/* line 1837, assets/sass/_layout.scss */
+/* line 1838, assets/sass/_layout.scss */
 #k {
   width: 75px;
   margin-top: 25px;
@@ -3252,7 +3253,7 @@ footer {
   float: left;
 }
 
-/* line 1845, assets/sass/_layout.scss */
+/* line 1846, assets/sass/_layout.scss */
 .sr-only {
   position: absolute;
   width: 1px;
