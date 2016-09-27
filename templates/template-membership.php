@@ -5,7 +5,7 @@ Template Name:  Membership Application Form
 ?>
 <?php get_header(); ?>
 
-<?php if (is_user_logged_in()){ ?>
+
 
 <div class="page-header">
 	<div class="container">
@@ -36,18 +36,6 @@ Template Name:  Membership Application Form
 
 <?php //get_template_part('partials/quicklinks'); ?>
 
-<?php } else { 
 
-	$home = get_home_url('/');
-	//$home = 'http://localhost:8888/nphcsn';
-	$login = $home . '/login';
-
-	//header('Location:' . $login);
-	wp_redirect($login);
-
-	//auth_redirect();
-	//exit();
-	}
-	?>
 
 <?php get_footer(); ?>
