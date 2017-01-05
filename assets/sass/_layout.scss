@@ -13,6 +13,23 @@ select:-webkit-autofill{
 	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
 
+input:focus,
+textarea:focus,
+select:focus{
+	outline:none;
+}
+
+input{
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+}
+
+input:focus{
+	//background: #eee !important;
+}
+
 /* Header Styles
 ================================================== */
 header{
@@ -1852,4 +1869,18 @@ footer{
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.input-wrap{
+	display:inline-block;
+	position:relative;
+}
+
+.input-active{
+	position:absolute;
+	z-index:-1;
+	right:0;
+	background-color:#eee;
+	width:100%;
+	bottom:0;
 }

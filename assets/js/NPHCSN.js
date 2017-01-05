@@ -468,7 +468,16 @@ $('.d-search-filter form').submit(function(e){
 	
 });
 
-$('input').wrap('<span class="input-active"></span>');
+$('input').wrap('<div class="input-wrap"></div>').after('<span class="input-active"></span>');
+
+//$('input:focus').find('.input-active').animate({'height':'100%', 'width':'100%' }, 2000);
+
+$('input:not([type="hidden"]').on('focus', function(){
+	var _this = $(this);
+	
+	$(this).next('.input-active').animate({'height':'35px'}, 300);
+	$(this).not(_this).next('.input-active').animate({'height':'0px'}, 300);
+})
 
 $('.start-discussion select option:eq(0)').text('Select A Topic');
 
