@@ -469,7 +469,7 @@ $('.d-search-filter form').submit(function(e){
 });
 
 //$('input').wrap('<div class="input-wrap"></div>').after('<span class="input-active"></span>');
-//$('input').wrap('<span class="input-active"></span>');
+$('input').append('<span class="input-active"></span>');
 //$('input:focus').find('.input-active').animate({'height':'100%', 'width':'100%' }, 2000);
 
 $('input:not([type="hidden"]').on('focus', function(){
